@@ -1,0 +1,144 @@
+body { color: black; background: white; font-family: arial;}
+p {color:black; }
+
+li {color:black; }
+underground { font:London Tube; }
+
+h {color:#000080; font-weight:bold }
+h1 {color:blue; }
+h2 {color:blue; }
+h3 {color:blue; }
+h4 {color:blue; }
+h5 {color:blue; }
+h6 {color:blue; }
+dt {color:blue; font-weight:bold }
+
+th {color:blue; background-color:white; font-weight:bold }
+
+fig {color:red; font-weight:bold }
+p.table {color:#000080; font-weight:bold }
+p.figure {color:#000080; font-weight:bold; text-align:center}
+p.heading {color:#000080; font-weight:bold }
+p.header {color:#000080; font-weight:bold; text-align:right; }
+p.footer {color:yellow; font-weight:bold; text-align:right; }
+p.footnote { padding-left:40px; }
+p.comment { font-family: cursive; font:"Comic Sans"; color:magenta; font-weight:bold }
+p.unchecked { color:#FF0000; font-size:24pt}
+pre.unchecked { color:#FF0000; font-size:24pt}
+p.obsolete {color:#808080; text-decoration: line-through }
+p.warning {color:yellow; background-color:black; font-weight:bold }
+
+header {color:blue; font-weight:bold }
+footer {color:blue; font-weight:bold }
+comment { font-family: cursive; font:"Comic Sans"; color:magenta; font-weight:bold }
+warning {color:yellow; background-color:black; font-weight:bold }
+.boxed {border: 1px solid black; }
+
+.inverse {color:white; background-color:black; }
+
+active_low {text-decoration: overline; }
+correction {background-color:yellow; }
+stroked {    
+   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+   -webkit-text-stroke-width: 1px;}
+
+toob {background-color:lightgreen; }
+
+result {text-decoration:underline; font-weight:bold }
+
+td.ROM				{ font-family: monospace; text-align:center; border-style:solid; border-width:thin; background-color:#804080; }
+td.RAM				{ font-family: monospace; text-align:center; border-style:solid; border-width:thin; background-color:#408040; }
+td.register			{ font-family: monospace; text-align:center; border-style:solid; border-width:thin; border-color:black; padding:3px; background-color:pink;}
+td.register_description		{ font-family: monospace; text-align:center; border-style:dashed; border-width:thin; border-color:gray;  padding:3px; }
+td.box				{ font-family: monospace; text-align:center; border-style:solid; border-width:thin; background-color:red; }
+td.bitbox			{ font-family: monospace; text-align:center; border-style:solid; border-width:thin; background-color: yellow; width:2ex; }
+td.bitsbox			{ font-family: monospace; text-align:center; border-style:solid; border-width:thin; border-color:black; padding:3px; background-color:pink;}
+td.bits_unused			{ font-family: monospace; text-align:center; border-style:solid; border-width:thin; border-color:black; padding:3px; background-color:lightgray; }
+td.ic_pin			{ font-family: monospace; text-align:center; border-style:solid; border-width:thin; border-color:black; padding:3px; background-color:lightgray; }
+td.ic_body			{ font-family: monospace; text-align:center; border-style:solid; border-width:thin; border-color:black; padding:3px; color: white; background-color:gray; }
+td.ic_body_300			{ font-family: monospace; text-align:center; border-style:solid; border-width:thin; border-color:black; padding:3px; color: white; background-color:gray; width:44px}
+td.ic_body_600			{ font-family: monospace; text-align:center; border-style:solid; border-width:thin; border-color:black; padding:3px; color: white; background-color:gray; width:110px}
+td.ic_body_ceramic		{ font-family: monospace; text-align:center; border-style:solid; border-width:thin; border-color:black; padding:3px; color: white; width:92px; background-color:#7b7278; }
+td.ic_body_ceramic_purple	{ font-family: monospace; text-align:center; border-style:solid; border-width:thin; border-color:black; padding:3px; color: white; width:92px;  background-color:#804080;}
+td.ic_pin_1			{ font-family: monospace; text-align:center; border-style:solid; border-width:thin; border-color:black; padding:3px; background-color: #00FF00; }
+td.address			{ font-family: monospace; text-align:center; border-style:solid; border-width:thin; }
+td.address1			{ font-family: monospace; text-align:center; border-top: solid; border-bottom: solid; border-width:thin; }
+td.address2			{ font-family: monospace; text-align:center; border-style:solid; border-left: none; border-right: none; border-width:thin; }
+td.corner_bl1			{ font-family: monospace; text-align:center; border-style:solid; border-top: none; border-right: none; border-width:thin; background-color:lightgray; border-color:black; }
+td.corner_bl			{ font-family: monospace; text-align:center; border-style:solid; border-top:none; border-right:none; border-width:thin; background-color:lightgray; border-color:black; }
+td.horizontal			{ font-family: monospace; text-align:center; border-style:solid; border-left: none; border-right: none; border-top: none; border-width:thin; background-color:lightgray; border-color:black; }
+td.vertical			{ font-family: monospace; text-align:center; border-style:solid; border-top: none; border-bottom: none; border-right: none; border-width:thin; background-color:lightgray; border-color:black; }
+td.bit			{ font-family: monospace; width:2ex; text-align:center; }
+td.imp			{ background-color:pink; }
+td.met			{ background-color:lightgreen; }
+td.instruction		{ background-color:pink; }
+td.comment		{ background-color:lightgreen; }
+
+table.register     { border-color:black; padding:3px; border-color:gray;  background-color: gray;}
+table.register_set { border-color:black; padding:3px; border-color:gray; font-family: monospace;}
+
+table.ic_pinout { border-color:black; background-color: white; padding:3px; border-color:gray; font-family: monospace;
+}
+
+.blinking-cursor {
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+

@@ -1,0 +1,2506 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<a name=""><hTML>
+<a name=""><hEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>STEbus Standard, IEEE-1000, 1987</TITLE>
+	<STYLE TYPE="text/css">
+	</STYLE>
+<link rel="stylesheet" href="../../../style.css">
+</head>
+<body lang=EN-GB>
+
+<p><B>ANSI/IEEE Std 1000-1987</B></p>
+
+<p><I><B>An American National Standard</B></I></p>
+
+<h1>IEEE Standard for an 8-Bit Backplane Interface: STEbus</h1>
+
+<p>Sponsor</p>
+
+<p><B>Technical Committee on Microprocessors and Microcomputers of the IEEE Computer Society</B></p>
+
+<p>Approved December 10, 1987</p>
+
+<p><B>IEEE Standards Board</B></p>
+
+<p>Approved August 11, 1988</p>
+
+<p><B>American National Standards Institute</B></p>
+
+<p>ISBN 1-55937-002-5</p>
+
+<p>&copy; Copyright 1988 by</p>
+
+<p><B>The Institute of Electrical and Electronics Engineers, Inc</B></p>
+
+<p><B>345 East 47th Street, New York, NY 10017, USA</B></p>
+
+<p><I>No part of this publication may be reproduced in any form, in an
+electronic retrieval system or otherwise, without the prior
+written permission of the publisher.</I></p>
+
+<hr size="1">
+
+<p><B>IEEE Standards </B>documents are developed within the Technical Committees of the IEEE Societies
+and the Standards Coordinating Committees of the IEEE Standards Board. Members of the committees
+serve voluntarily and without compensation. They are not necessarily
+members of the Institute. The standards developed within IEEE
+represent a consensus of the broad expertise on the subject within
+the Institute as well as those activities outside of IEEE which have
+expressed an interest in participating in the development of the
+standard.</p>
+
+<p>Use of an IEEE Standard is wholly voluntary. The existence of an IEEE
+Standard does not imply that there are no other ways to produce,
+test, measure, purchase, market, or provide other goods and services
+related to the scope of the IEEE Standard. Furthermore, the viewpoint
+expressed at the time a standard is approved and issued is subject to
+change brought about through developments in the state of the art and
+comments received from users of the standard. Every IEEE Standard is
+subjected to review at least once every five years for revision or
+reaffirmation. When a document is more than five years old, and has
+not been reaffirmed, it is reasonable to conclude that its contents,
+although still of some value, do not wholly reflect the present state
+of the art. Users are cautioned to check to determine that they have
+the latest edition of any IEEE Standard.</p>
+
+<p>Comments for revision of IEEE Standards are welcome from any interested party,
+regardless of membership affiliation with IEEE. Suggestions for
+changes in documents should be in the form of a proposed change of
+text, together with appropriate supporting comments.</p>
+
+<p>Interpretations: Occasionally questions may arise regarding the meaning of portions of
+standards as they relate to specific applications. When the need for
+interpretations is brought to the attention of IEEE, the Institute
+will initiate action to prepare appropriate responses. Since IEEE
+Standards represent a consensus of all concerned interests, it is
+important to ensure that any interpretation has also received the
+concurrence of a balance of interests. For this reason IEEE and the
+members of its technical committees are not able to provide an
+instant response to interpretation requests except in those cases
+where the matter has previously received formal consideration.</p>
+
+<p>Comments on standards and requests for interpretations should be addressed to:</p>
+
+<p>Secretary, IEEE Standards Board<br>
+345 East 47th Street<br>
+New York, NY 10017<br>
+USA</p>
+
+<p>IEEE Standards documents are adopted by the Institute of Electrical and
+Electronics Engineers without regard to whether their adoption may
+involve patents on articles, materials, or processes. Such adoption
+does not assume any liability to any patent owner, nor does it assume
+any obligation whatever to parties adopting the standards documents.</p>
+
+<hr size="1">
+<a name="Foreword"><h1>Foreword</h1>
+
+
+<p>(This Foreword is not a part of ANSI/IEEE Std 1000-1987, IEEE Standard for
+an 8-Bit Backplane Interface: STEbus.)</p>
+
+<p>The initial concept for STEbus was to produce a European version of the
+STD Bus using the Eurocard form factor with the DIN41612 connector. From that concept STE became known as STD-European.</p>
+
+<p>When IEEE formed Working Group P1000 the brief specified a Standard 8-Bit
+Backplane Interface. At the inaugural meeting of Working Group P1000
+it quickly became apparent that the opportunity was there to create a
+completely new, modern, high-performance 8-Bit bus, and all ideas of
+merely repinning the old STD Bus were rapidly forgotten.</p>
+
+<p>At the initial meeting of P1000 it was decided that the bus should be a
+part of the same family as VMEbus and Futurebus and as such should be
+an asynchronous bus with multimaster capability. Today it is often
+referred to as the baby brother of VMEbus. Unlike VMEbus though it
+was to be processor and manufacturer independent. This has proven to
+be an excellent decision as today there are many varied types of
+processor available on STEbus, from microcontrollers such as 8031,
+through Intel&rsquo;s 8085, 8088, and 80188; National Semiconductor&rsquo;s
+32008 and 32016; Motorola&rsquo;s 6809, 68000, and 68008; Zilog&rsquo;s
+Z80 and Z280; Hitachi&rsquo;s 64180, and the Inmos Transputer with
+the promise of more to come.</p>
+
+<p>A presentation was made to a packed audience at the IEE in London,
+England in early 1983. It met with critical acclaim. The first
+article about STEbus was also published about this time in an
+international magazine (EDN May 26, 1983).</p>
+
+<p>Work continued internationally and in late 1984 Draft D3.1 was produced.
+This draft eradicated the daisy-chain bus request mechanism of D2.0
+in favor of a simple solution that allowed position independence of
+cards in the rack.</p>
+
+<p>This was the first firm specification and encouraged more manufacturers to
+look at the bus seriously. Among them were BICC-Vero, a major
+manufacturer of Eurocard enclosures and backplanes, and British
+Telecom, the UK's Telephone Utility. Market ground zero was early
+1985 and since this time the number of manufacturers has continued to
+grow from 18 companies in Spring 1986 to more than 30 in mid-1987,
+with over 700 products available.</p>
+
+<p>Much credit and praise is due Tim Elsmore who first conceived the idea for
+STEbus during his employment with GMT Electronic Systems Ltd. Paul
+Borrill was instrumental in negotiating with IEEE the formation of
+Working Group P1000 and Bill Shields was appointed Chairman.</p>
+
+<p>This standard was prepared by Working Group P1000 of the Microprocessor
+Standards Committee. At the time of approval of this standard the
+membership was as follows:</p>
+
+<table border="1" cellspacing="0" cellpadding="5">
+<tr><td colspan="3"><B>W. Shields</B><I>, Chair</I></td></tr>
+<tr><td valign="top"><p>P. Borrill<br>
+R. Edwards<br>
+T. Ellsmore<br>
+A. Franklin</p></td>
+
+<td valign="top"><p>S. Jenkins<br>
+R. Kemp<br>
+P. Lomas<br>
+M. Morris</p></td>
+
+<td valign="top"><p>T. Sharp<br>
+R. Squirrell<br>
+A. C. Timmins<br>
+A. Winter</p></td></tr>
+</table>
+
+<hr size="1">
+<p>The following persons were on the balloting committee that approved this
+document for submission to the IEEE Standards Board:</p>
+
+<table border="1" cellspacing="0" cellpadding="5">
+<tr><td valign="top"><p>A. Allison<br>
+P. J. Ashenden<br>
+J. R. Avery<br>
+G. Baldwin<br>
+R. W. Boberg<br>
+P. L. Borrill<br>
+M. Brewer<br>
+C. Brill<br>
+B. Brown<br>
+C. Camps<br>
+S. Casper<br>
+S.C. Coughtrie<br>
+R. Davis<br>
+J. R. Davis<br>
+S. Diamond<br>
+R. D. Edwards<br>
+T. Elsmore<br>
+W. Fischer<br>
+J. Flournoy<br>
+G. Force<br>
+A. Franklin<br>
+M. Freeman</p></td>
+
+<td valign="top"><p>D. Gustavsson<br>
+D. Hagman<br>
+T. Harkaway<br>
+K. Howell<br>
+R. Hocksprung<br>
+D. James<br>
+S. Jenkins<br>
+L. Kaleda<br>
+R. Kalish<br>
+R. Karpinski<br>
+R. Kemp<br>
+H. Kiermann<br>
+D. Kraft<br>
+G. Langdon<br>
+T. Leonard<br>
+G. Lyons<br>
+J.P. Lyons<br>
+E. Manado<br>
+R. McLillan<br>
+M. Morris<br>
+J. Mooney<br>
+G. Nelson</p></td>
+
+<td valign="top"><p>D. Ogden<br>
+C. G. Palmer<br>
+A. J. Payne<br>
+S. Pre Tal<br>
+R. Rawson<br>
+B. Romero<br>
+C. Seadon<br>
+T. C. Sharpe<br>
+B. Shields<br>
+M. Smolin<br>
+R. Squirrell<br>
+D. Stevenson<br>
+R. Stewart<br>
+M. Teener<br>
+M. R. Uchida<br>
+E. Waltz<br>
+C. Warren<br>
+G. White<br>
+F. Whittington<br>
+A. Wilson<br>
+A. Winter<br>
+D. Yen</p></td></tr>
+</table>
+
+
+<p>When the IEEE Standards Board approved this standard on December 10, 1987,
+it had the following membership:</p>
+
+<p><B>Donald C. Fleckenstein</B><I>, Chair</I><br>
+<B>Marco W. Migliaro</B><I>, Vice Chair</I><br>
+<B>Andrew G. Salem</B><I>, Secretary</I></p>
+
+<table border="1" cellspacing="0" cellpadding="5">
+<tr><td valign="top"><p>James H. Beall<br>
+Dennis Bodson<br>
+Marshall L. Cain<br>
+James M. Daly<br>
+Stephen R. Dillon<br>
+Eugene P. Fogarty<br>
+Jay Forster<br>
+Kenneth D. Hendrix<br>
+Irvin N. Howell<br>
+Leslie R. Kerr<br>
+Jack Kinn<br>
+Irving Kolodny<br>
+Joseph L. Koepfinger*</p></td>
+
+<td valign="top"><p>Edward Lohse<br>
+John May<br>
+Lawrence V. McCall<br>
+L. Bruce McClung<br>
+Donald T. Michael *<br>
+L. John Rankine<br>
+John P. Riganati<br>
+Gary S. Robinson<br>
+Frank L. Rose<br>
+Robert E. Rountree<br>
+William R. Tackaberry<br>
+William B. Wilkens<br>
+Helen M. Wood</p></td></tr>
+</table>
+
+<p>*Member emeritus</p>
+
+<hr size="1">
+
+<h1>Contents</h1>
+
+<Pre><a href="#1">1.	General</a>
+
+<a href="#1.1">1.1	Scope</a>
+<a href="#1.2">1.2	Features</a>
+<a href="#1.3">1.3	Objects</a>
+<a href="#1.4">1.4	Definitions</a>
+<a href="#1.5">1.5	Logical and Electrical State Relationships</a>
+
+<a href="#2">2.	Functional Description</a>
+
+<a href="#2.1">2.1	System Controller</a>
+<a href="#2.2">2.2	Arbiter</a>
+<a href="#2.3">2.3	Masters</a>
+<a href="#2.4">2.4	Slaves</a>
+
+<a href="#3">3.	Signal Lines</a>
+
+<a href="#3.1">3.1	Information Lines</a>
+<a href="#3.2">3.2	Synchronization Lines</a>
+<a href="#3.3">3.3	Attention Request Lines (ATNRQ[7..0]*)</a>
+<a href="#3.4">3.4	Bus Allocation Lines</a>
+<a href="#3.5">3.5	Utility Lines</a>
+<a href="#3.6">3.6	IEEE Std 1000 Bus Connector Pin Allocations</a>
+
+<a href="#4">4.	Arbitration</a>
+
+<a href="#4.1">4.1	Arbitration Algorithm</a>
+<a href="#4.2">4.2	Bus Requests</a>
+<a href="#4.3">4.3	Bus Grants</a>
+<a href="#4.4">4.4	Control Allocation Sequence</a>
+
+<a href="#5">5.	Data Transfer Protocol</a>
+
+<a href="#5.1">5.1	Read Sequence</a>
+<a href="#5.2">5.2	Write Sequence</a>
+<a href="#5.3">5.3	Read-Modify-Write Sequence</a>
+<a href="#5.4">5.4	Vector-Fetch</a>
+<a href="#5.5">5.5	Burst Transfer Sequences</a>
+<a href="#5.6">5.6	General Data Transfer Rules</a>
+<a href="#5.7">5.7	Transfer Error</a>
+<a href="#5.8">5.8	System Time-Out</a>
+
+<a href="#6">6.	Inter-Board Signaling</a>
+
+<a href="#6.1">6.1	Overview</a>
+<a href="#6.2">6.2	Attention Request Lines (ATNRQ[7..0]*)</a>
+<a href="#6.3">6.3	Response to Interrupt Attention Requests</a>
+<a href="#6.4">6.4	Excluded Utilizations of Attention Request Lines</a>
+
+<a href="#7">7.	Electrical Specifications</a>
+
+<a href="#7.1">7.1	Power Supplies</a>
+<a href="#7.2">7.2	Board-Electrical Requirements</a>
+<a href="#7.3">7.3	Driver and Receiver DC Characteristics</a>
+<a href="#7.4">7.4	Signal DC Characteristics</a>
+<a href="#7.5">7.5	Signal AC Characteristics</a>
+<a href="#7.6">7.6	Backplane AC Specifications</a>
+<a href="#7.7">7.7	Termination Networks</a>
+
+<a href="#A">Annex A (informative) Applicable IEC Specifications</a>
+<a href="#B">Annex B (informative) Recommended Bus Termination Arrangement</a></pre>
+
+<hr size="1">
+
+<h2>MECHANICAL CORE SPECIFICATIONS FOR MICROCOMPUTERS</h2>
+
+<p><comment>This is in the latest spec but not in the spec used to create this document.
+</comment></p>
+
+<p><a href="../1101/">IEEE 1101-1: MECHANICAL CORE SPECIFICATIONS FOR MICROCOMPUTERS</a></p>
+
+<hr size="1">
+
+<a name="1"><h1>1. General</h1>
+
+<a name="1.1"><h2>1.1 Scope</h2>
+
+<p>The overall level of performance that may be achieved by any computer
+system is determined, in large part, by the system bus that is used
+to effect communication between the various system elements. System
+performance characteristics, measured in terms of speed, reliability,
+suitability to a variety of purposes, and adaptability to changing
+technology are ultimately dependent on the particular bus structure
+that is used and its associated protocols.</p>
+
+<p>This standard defines the IEEE Std 1000 Bus, which may be used to
+implement general purpose, high-performance 8-bit microcomputer
+systems. Such a system may be used in a stand-alone configuration, or
+in larger multiple-bus architectures, as a private (or secondary) bus
+or a high-speed I/O channel. This standard is applicable to those
+systems and system elements with the common commercial designation
+STE Bus. It is intended for those users who plan to evaluate,
+implement, or design various system elements that are compatible with
+the IEEE 1000 Std Bus system structure.</p>
+
+<p>The physical attributes and method of interconnect utilized by boards and
+modules conforming to this standard are derived from several
+International Electrotechnical Commission (IEC) standards. These
+standards, when implemented jointly in a systems environment, result
+in a mechanical configuration commonly referred to as <I>Eurocard</I>.
+Appendix B lists such applicable standards which, where referenced,
+are considered as if incorporated with this standard. In particular
+the connector used by IEEE Std 1000 Bus boards is a 64-pin male
+connector utilizing the outside two rows (designated a and c rows),
+specified in IEC Publication 603-2,1
+and the mating female connector is used on IEEE Std 1000 Bus
+backplanes. The recommended size for IEEE Std 1000 Bus boards is 100
+mm &times; 160&nbsp;mm (3.937 in &times; 6.299 in), commonly referred to as a <I>single
+height standard depth </I>Eurocard.</p>
+
+<p>The IEEE Std 1000 Bus structure is based on the master-slave concept in
+which a master, having gained control of the bus, may address and
+command slaves. Masters and slaves communicate with each other by use
+of an asynchronous interlocked handshake protocol. This technique
+allows for the construction of computer systems that incorporate
+devices of widely varying speeds. Multiple masters may be implemented
+within a single system.</p>
+
+<p>IEC publications are available from the Sales Department, American
+National Standards Institute, 1430 Broadway, New York, NY 10018.</p>
+
+<p>Two independent address spaces are supported: memory and I/O. Memory
+transactions reference a 1 megabyte physical address space, while I/O
+transactions reference a 4 kilobyte physical address space. System
+integrity during all such transactions is enhanced by provision of a
+transfer error signal.</p>
+
+<p>Provision is made for interboard condition alerts such as interrupt requests,
+DMA requests, system-specific error conditions, or other specialized
+status conditions. Within this scheme eight prioritized attention
+request levels, each with vectored response capability, are available
+for user assignation.</p>
+
+<p>This standard deals only with those characteristics that must be specified
+so as to ensure the successful design and implementation of
+compatible boards and systems. Issues relating to individual design
+specifications, and performance or safety requirements are not
+addressed.</p>
+
+<a name="1.2"><h2>1.2 Features</h2>
+
+<p>The fundamental features offered by IEEE Std 1000 Bus are as follows:</p>
+
+<ul></li>
+
+<li><p>8-bit Data Field Width</p></li>
+<li><p>1 Megabyte Memory Address Range</p></li>
+<li><p>4 Kilobyte I/O Address Range</p></li>
+<li><p>Asynchronous Data Transfer</p></li>
+<li><p>Transfer Error Signal</p></li>
+<li><p>Multiple Masters</p></li>
+<li><p>Eight Attention Request Lines</p></li>
+<li><p>IEC 603-2 Connector</p></li>
+<li><p>Single or Double Eurocard Boards and Modules</p></li>
+<li><p>5&nbsp;V, &plusmn; 12&nbsp;V and Standby Power Supply Distribution</p></li>
+<li><p>Total Position Independence of Boards and Modules in Backplane</p></li>
+<li><p>Total Inter-Board Compatibility</p></li>
+<li><p>Total Central Processing Unit (CPU) Generic Device Family Independence</p></li>
+<li><p>Potential 5 Megabyte per Second Data Transfers</p></li>
+</ul>
+
+
+<a name="1.3"><h2>1.3 Objects</h2>
+
+
+<p>This standard is intended to</p>
+
+<ol>
+<li><p>Define a general purpose microcomputer board interface.</p></li>
+
+<li><p>Specify those device-independent electrical, mechanical, and
+functional interface parameters that must be met so as to effect
+unambiguous communication between system elements and to effect
+physical compatibility.</p></li>
+
+<li><p>Specify the terminology and definitions related to the specification.</p></li>
+
+<li><p>Enable the interconnection of a wide variety of independently
+manufactured boards within a single functional system.</p></li>
+
+<li><p>Define a standard that places the minimum number of restrictions on
+the performance characteristics of boards within a conforming system.</p></li>
+
+<li><p>Allow microcomputer system users of relatively modest experience to
+assemble modularly expandable computer systems with a high
+probability of Success.</p></li>
+
+</ol>
+
+<hr size="1">
+
+<a name="1.4"><h2>1.4 Definitions</h2>
+
+
+<p>The following general definitions apply throughout this standard. Additional detailed definitions are given where appropriate.</p>
+
+<a name="1.4.1"><h3>1.4.1 General System Terms</h3>
+
+
+<dl>
+
+
+
+<dt>compatibility</dt>
+<dd>The degree to which boards may be interconnected and used without modification when
+designed according to the specifications contained within this
+standard.</dd>
+
+<dt>interface</dt>
+<dd>A shared boundary between two or more systems, 
+or between two or more elements within a
+system, through which information is conveyed.</dd>
+
+<dt>interface system</dt>
+<dd>The device-independent electrical, mechanical, and functional interface
+elements required for unambiguous communication between two or more
+devices. Typical elements include:</p>
+
+<ul>
+<li>driver and receiver circuitry</li>
+<li>signal line descriptions</li>
+<li>timing and control conventions</li>
+<li>communication</li>
+<li>protocols</li>
+<li>functional logic circuits.</li>
+</ul>
+
+<dt>system</dt>
+<dd>A set of interconnected boards that achieve a specified objective by the performance of designated functions.</dd>
+
+</dl>
+
+
+<a name="1.4.2"><h3>1.4.2 Signals and Paths</h3>
+
+
+<dl>
+<dt>address</dt>
+<dd>The reference to a unit of data or the value represented by the address lines while ADRSTB* is active.</dd>
+
+<dt>addressed board</dt>
+<dd>A board that recognizes its address while ADRSTB* is active.</dd>
+
+<dt>arbitration</dt>
+<dd>The means whereby masters compete for control of the bus and the process by which a master is granted control of the bus.</dd>
+
+<dt>backplane</dt>
+<dd>A printed circuit board (PCB) on which connectors are mounted, into which boards or plug-in units are inserted.</dd>
+
+<dt>block transfer</dt>
+<dd>A sequence
+of data transfers, in the same direction, that occur during a single
+bus transaction.</dd>
+
+<dt>board</dt>
+<dd>A printed circuit board (PCB) that complies with this standard.</dd>
+
+<dt>bus</dt>
+<dd>A signal line or set of lines used by an interface system to connect a number of devices,
+and over which information is conveyed.</dd>
+
+<dt>byte</dt>
+<dd>A set of eight signals, individually referred to as bits, which are operated on as a unit.</dd>
+
+<dt>handshake</dt>
+<dd>An interlocked sequence of signals between interconnected boards in which each board waits for an 
+acknowledgement of its previous signal before proceeding.</dd>
+
+<dt>high
+state</dt>
+<dd>The more positive voltage level used to represent one of two logical binary states.</dd>
+
+<dt>low state</dt>
+<dd>The more negative voltage level used to represent one of two logical binary states.</dd>
+
+<dt>module</dt>
+<dd>A plug-in unit consisting of one or more boards that contains at least one bus
+interface conforming to this standard, which plugs into the backplane.</dd>
+
+<dt>protocol</dt>
+<dd>The signaling rules used to convey information or commands between boards connected to the bus.</dd>
+
+<dt>release</dt>
+<dd>The action of a transmitter in ceasing to hold a signal line in the asserted state.</dd>
+
+<dt>sequence</dt>
+<dd>An indivisible bus transaction comprising one or more transfers.</dd>
+
+<dt>settling time</dt>
+<dd>The time taken for a signal line to settle unambiguously to a logical state when making a transition from one state to another.</dd>
+
+<dt>signal</dt>
+<dd>The physical representation of data.</dd>
+
+<dt>signal level</dt>
+<dd>The relative magnitude of a signal when considered in relation to an arbitrary
+reference. The unit of representation used within this standard is the volt.</dd>
+
+<dt>signal
+line</dt>
+<dd>One of a set
+of signal conductors in an interface system used to transfer data
+among interconnected boards.</dd>
+
+<dt>signal
+parameter</dt>
+<dd>That element of an electrical quantity whose values or sequence of values
+convey information.</dd>
+
+<dt>tenure</dt>
+<dd>The time during which a master has control of the bus.</dd>
+
+<dt>transaction</dt>
+<dd>The combination of data transfer sequences controlled by a master during a single bus
+tenure.</dd>
+
+<dt>transfer</dt>
+<dd>The movement of a single byte of data from the current master to the addressed slave(s)
+or from the addressed slave to the master.</dd>
+
+</dl>
+
+<a name="1.4.3"><h3>1.4.3 Generic Signal Names</h3>
+
+<p>Throughout
+this standard bus request and acknowledge signals and attention
+request signals are sometimes referred to as BUSRQ<I>n</I>*,
+BUSAK<I>n</I>*,
+and ATNRQn* respectively. Such general references are equivalent to specific references BUSRQ0*
+or BUSRQ1* etc.</p>
+
+<a name="1.4.4"><h3>1.4.4 Notation for Bus Signals</h3>
+
+<p>Throughout this standard signals on a particular bus are referred to
+collectively using the form A [19..0]. This notation should be taken as an abbreviation of all of the
+address bus signals from A19 through to A0 inclusive.</p>
+
+<p>In addition to the address bus signals, the notation is also used for
+the data lines (for example, D[7..0]),
+the common lines (for example, CM[2..0]),
+the attention request lines (for example, ATNRQ[7..0]*),
+the bus request lines (for example, BUSRQ[1..0]*)
+and the bus acknowledge lines (for example, BUSAK[1..0]*).</p>
+
+<a name="1.5"><h2>1.5 Logical and Electrical State Relationships</h2>
+
+<p>Throughout this standard the term <I>asserted</I> is used to indicate
+the logical true state of the particular signal referenced.</p>
+
+<p>The corresponding term <I>negated</I>, however, is not used because it comprises a potentially ambiguous
+representation when describing signals, which may be low or high true.</p>
+
+<p>All signals that are low in their asserted state are designated by a
+star (asterisk), which follows the signal name (for example,
+ADRSTB*). The correlation between the terms true:false, high:low, and
+asserted:released is demonstrated in the following table, utilizing
+the signals ADRSTB* and CM[2..0] as an example.</p>
+
+<table border="1" cellspacing="0" cellpadding="5">
+<tr><th>Function</th><th>Electrical</th><th>Logical</th><th>State</th></tr>
+<tr><td rowspan="3">CM[2..0]</td><td>High</td><td>1 True</td><td>Active, asserted</th></tr>
+<tr><td>Low</td><td>0 False</td><td>Active, released</th></tr>
+<tr><td>High Z</td><td> &mdash; </td><td>Inactive</th></tr>
+<tr><td rowspan="3">ADRSTB*</td><td>Low</td><td>1 True</td><td>Active, asserted</th></tr>
+<tr><td>High</td><td>0 False</td><td>Active, released</th></tr>
+<tr><td>High Z</td><td> &mdash; </td><td>Inactive</th></tr>
+</table>
+
+<hr size="1">
+
+<a name="2"><h1>2. Functional Description</h1>
+
+<p>This section describes the functional elements of IEEE Std 1000 Bus
+interface. They are</p>
+
+<ol>
+<li><p>System Controller</p></li>
+<li><p>Arbiter</p></li>
+<li><p>Masters</p></li>
+<li><p>Slaves</p></li>
+</ol>
+
+<p>An individual board attached to IEEE Std 1000 Bus backplane may consist
+of one or more of these elements.</p>
+
+<a name="2.1"><h2>2.1 System Controller</h2>
+
+<p>Within any IEEE Std 1000 Bus system there shall be one, and only one, system
+controller. The system controller provides essential facilities for
+the proper operation of IEEE Std 1000 Bus systems. The system
+controller may be combined on a board with a master.</p>
+
+<p>The system controller shall provide as a minimum the following requirements:</p>
+
+<OL>
+<LI><p>SYSCLK.	A general-purpose clock signal in accordance with the specifications
+	detailed in Section 3 of this standard.</p>
+
+<LI><p>SYSRST*. An initial power-on system reset signal in accordance with
+	the specifications detailed in Section 3 of this standard.</p>
+
+<LI><p>TFRERR*. A transfer error signal in accordance with the
+	specifications detailed in Section 3 of this standard.</p>
+
+</OL>
+
+<a name="2.2"><h2>2.2 Arbiter</h2>
+
+<p>All bus allocation grants shall be provided by the arbiter in accordance
+with the protocol described in Section 4 of this standard. There
+shall be one, and only one, arbiter within any IEEE Std 1000 Bus
+system. The arbiter may be combined on a board with a master.</p>
+
+<a name="2.3"><h2>2.3 Masters</h2>
+
+<p>A master is a board that is capable of controlling the transfer of data
+on the bus, by means of the protocols defined in Sections 4 and 5 of
+this standard. A master may contain a central processing unit (CPU)
+or logic necessary to transfer data over the bus (for example, DMA
+controller).</p>
+
+<a name="2.3.1"><h3>2.3.1 Master Types</h3>
+
+
+<p>All masters must request allocation of IEEE Std 1000 Bus from the arbiter
+before they can control data transfers except in the special case of
+a default master.</p>
+
+<p><B>Default master.</B> 
+A master that is allocated control of the bus by the arbiter whenever the bus
+is not in use by another master. A default master is necessarily
+combined with the arbiter on the same board and has the lowest
+priority for bus allocation. There can be only one default master
+within a IEEE Std 1000 Bus system, though a IEEE Std 1000 Bus system
+need not include a default master.</p>
+
+<p>All other masters (termed potential masters) request allocation of bus
+control from the arbiter. This request shall be made by asserting one
+of the two bus request (BUSRQ<I>n</I>*)
+lines, or in the case of a master that is on the same board as the
+arbiter but is not configured as a default master, by asserting a
+third bus request line that is private to that board.</p>
+
+<p>Multiple masters may exist within a system. The master's priority for bus
+control allocation and the means by which such allocation is
+accomplished are as described in Section 4.</p>
+
+<a name="2.3.2"><h3>2.3.2 Master Modes</h3>
+
+<p>Masters may retain control for a period of time constrained only by the
+specific system requirements. Two modes of operation may be used by masters.</p>
+
+<ol>
+
+<li><p><I>Release-When-Done</I>. The master retains control of the bus until all desired transfers
+have been accomplished.</p></li>
+
+<li><p><I>Release-On-Request</I>. The master retains control of the bus indefinitely, relinquishing
+control when it determines that another master requires allocation of
+the bus. This determination may be made by several methods including
+receipt of an attention request signal, hardware polling, or by
+detection of a BUSRQ<I>n</I> signal becoming active.</p></li>
+
+</ol>
+
+<p>NOTE &mdash; By definition a default master always operates in release-on-request mode.</p>
+
+<a name="2.4"><h2>2.4 Slaves</h2>
+
+<p>Boards that are capable of being controlled over the IEEE Std 1000 Bus are
+designated slaves. Slaves decode the address lines and act upon the
+command provided by the current master. A slave may be combined with
+other functional elements on a board (for example, a board that
+contains both a master and memory that is accessible by other masters
+within the system).</p>
+
+<p>Figure 1 shows one possible system configuration that utilizes a variety of
+boards in combination.</p>
+
+<hr size="1">
+
+<p><h>Figure 1 &mdash; Example of System Configuration</h></p>
+
+<p><img src="img/STEbus_spec_figure_01.png" width="600"></p>
+
+<hr size="1">
+
+<a name="3"><h1>3. Signal Lines</h1>
+
+<p>This section provides specific definitions for all signal lines that are
+part of the IEEE Std 1000 Bus. Each of these signals has been
+assigned to one of five functional groups. These groups are</p>
+
+<ol>
+
+<li><p>Information Lines</p>
+
+	<ol type="a">
+<LI><p>Address Lines</p></li>
+<LI><p>Data Lines</p></li>
+<LI><p>Command Lines</p></li>
+	</ol>
+
+<li><p>Synchronization Lines</p></li>
+
+<li><p>Attention Request Lines</p></li>
+
+<li><p>Bus Allocation Lines</p></li>
+
+<li><p>Utility Lines</p></li>
+
+</ol>
+
+<a name="3.1"><h2>3.1 Information Lines</h2>
+
+<a name="3.1.1"><h3>3.1.1 Address Lines (A[19..0])</h3>
+
+<p>These unidirectional lines specify the address of the referenced memory or
+I/O location or, during a <I>vector fetch </I>response to an
+attention request, the level of the request being acknowledged. The
+most significant bit is A19 and A0 is the least significant.</p>
+
+<p>The following table details the usage of the address lines during various
+types of operations.</p>
+
+<a name="3.1.2"><h3>3.1.2 Data Lines (D[7..0])</h3>
+
+<p>These eight bidirectional lines carry information between masters and
+slaves. The most significant bit is D7 and D0 is the least
+significant.</p>
+
+<a name="3.1.3"><h3>3.1.3 Command Lines (CM[2..0])</h3>
+
+<p>These signals are used by the current master to convey coded data to the
+slave describing the type of the current data transfer according to
+Table 1.</p>
+
+<p>Command codes marked <I>reserved</I> shall not be used,
+and IEEE Std 1000 boards shall not respond to or utilize these codes
+for any purpose so as to be considered in compliance with this
+standard. This is to guarantee compatibility with boards that may be
+designed to conform to future revisions of this standard.</p>
+
+<p><h>Table 1 &mdash; Command Codes</h></p>
+
+<table border="1" cellpadding="5" cellspacing="0"bgcolor="#FFFFFF">
+<tr>
+<th>Operation</th>
+<th>Valid Lines</th>
+<th>Total Addressed Range</th>
+</tr>
+<tr><td>Memory&nbsp;read&nbsp;or&nbsp;write</td><td>A[19..0]</td><td>1048576 bytes</td></tr>
+<tr><td>I/O read or write</td><td>A[11..0]</td><td>4096 locations</td></tr>
+<tr><td>Vector-fetch</td><td>A[2..0]</td><td>8 levels</td></tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table border="1" cellpadding="5" cellspacing="0"  >
+<tr><th>CM2</th><th>CM1</th><th>CM0</th><th>Transfer</th></tr>
+<tr><td align="center">0</td><td align="center">0</td><td align="center">0</td><td>Reserved</td></tr>
+<tr><td align="center">0</td><td align="center">0</td><td align="center">1</td><td>Reserved</td></tr>
+<tr><td align="center">0</td><td align="center">1</td><td align="center">0</td><td>Reserved</td></tr>
+<tr><td align="center">0</td><td align="center">1</td><td align="center">1</td><td>Vector-fetch</td></tr>
+<tr><td align="center">1</td><td align="center">0</td><td align="center">0</td><td>I/O Write</td></tr>
+<tr><td align="center">1</td><td align="center">0</td><td align="center">1</td><td>I/O Read</td></tr>
+<tr><td align="center">1</td><td align="center">1</td><td align="center">0</td><td>Memory write</td></tr>
+<tr><td align="center">1</td><td align="center">1</td><td align="center">1</td><td>Memory read</td></tr>
+</table>
+
+
+
+
+<a name="3.2"><h2>3.2 Synchronization Lines</h2>
+
+<p>The following signals are classified as synchronization lines:</p>
+
+<a name="3.2.1"><h3>3.2.1 Address Strobe (ADRSTB*)</h3>
+
+<p>This signal indicates the presence of valid data on the address lines.</p>
+
+<a name="3.2.2"><h3>3.2.2 Data Strobe (DATSTB*)</h3>
+
+<p>This signal indicates the presence of valid data on the command lines
+CM[2..0]. During a read, or vector-fetch transfer, this signal indicates that
+the addressed slave may place data on the data lines. During a write
+transfer this signal indicates the presence of valid data on the data
+lines.</p>
+
+<a name="3.2.3"><h3>3.2.3 Data Transfer Acknowledge (DATACK*)</h3>
+
+<p>This signal is used to indicate to the master that the command has been
+performed: that data have been placed on, or accepted from, the data
+lines.</p>
+
+<a name="3.2.4"><h3>3.2.4 Transfer Error (TFRERR*)</h3>
+
+<p>This signal may be asserted by any board to indicate an error during the
+current transfer. Specific timing requirements for this signal are
+detailed in Section 5 of this standard.</p>
+
+<a name="3.3"><h2>3.3 Attention Request Lines (ATNRQ[7..0]*)</h2>
+
+<p>These signals are configured for indicating user-specific events when a
+IEEE Std 1000 Bus system is commissioned.</p>
+
+<p>Such events may include, but are not limited to, interrupt requests, DMA
+requests, or notification of conditions, which exist either at the
+board or system level (for example, failure). Eight attention request
+lines are available. Three optional response protocols are described
+in Section 6. of this standard for the use of attention request lines
+as traditional interrupts.</p>
+
+<p>These signals may be used by any board to request the attention of other
+boards within IEEE Std 1000 Bus systems.</p>
+
+<p>Any board within the system may be connected to any of the eight
+attention request lines. Multiple boards may be connected to the same
+attention request line allowing for the broadcast of events to one or
+more boards within a system. There is an implied priority with
+ATNRQ0* having highest priority and ATNRQ7* having the lowest.</p>
+
+<a name="3.4"><h2>3.4 Bus Allocation Lines</h2>
+
+<p>The bus allocation lines are:</p>
+
+<table border="1" cellpadding="5" cellspacing="0"bgcolor="#FFFFFF">
+<tr>
+<th>Signal</th>
+<th>Function</th>
+</tr>
+<tr><td>ADRSTB*</td><td>Address strobe</td></tr>
+<tr><td>DATSTB*</td><td>Data strobe</td></tr>
+<tr><td>DATACK*</td><td>Data transfer acknowledge</td></tr>
+<tr><td>TFRERR*</td><td>Transfer error</td></tr>
+</table>
+
+<a name="3.4.1"><h3>3.4.1 Bus Request Lines (BUSRQ[1..0]*)</h3>
+
+<p>These signals may be asserted by any potential master that desires
+allocation of the IEEE Std 1000 Bus. In systems utilizing prioritized
+arbitration, BUSRQ0* shall have priority over BUSRQ1*.</p>
+
+<a name="3.4.2"><h3>3.4.2 Bus Acknowledge Lines (BUSAK[1..0]*)</h3>
+
+<p>These signals are used by the arbiter to indicate to a master requesting
+bus allocation that it may take control of the bus. BUSAK1* indicates
+a grant to the master requesting by way of BUSRQ1*, and BUSAK0*
+indicates a grant to the master requesting by way of BUSRQ0*.</p>
+
+<a name="3.5"><h2>3.5 Utility Lines</h2>
+
+<p>The following signals are classified as utility lines:</p>
+
+<a name="3.5.1"><h3>3.5.1 System Clock (SYSCLK)</h3>
+
+<p>The
+system clock is a periodic signal of constant frequency that may be
+used as a generalized facility by masters or slaves. The system clock
+is independent of the protocol of any other bus signals, and is
+provided by the system controller. Figure 2 contains timing waveforms
+for SYSCLK.</p>
+
+<a name="3.5.2"><h3>3.5.2 System Reset (SYSRST*)</h3>
+
+<p>The system reset signal is used to place the system in a known initial
+state. While SYSRST* is active all boards shall inhibit any access to
+the system bus. SYSRST* may be driven by any board. It is recommended
+that during a powerup sequence, any board capable of performing
+on-board diagnostic self-tests hold SYSRST* active until the
+successful completion of such tests.</p>
+
+<p>The system controller shall provide an initial power-on system reset
+signal that is not &lt;200 ms and not &gt;500 ms in duration,
+measured from the point at which the +5&nbsp;V dc supply reaches its
+designated minimum specification (see Section 7). The system
+controller also shall assert SYSRST* at any time that the system
+supply falls below its minimum specified tolerance, and shall
+continue to assert it for the entire period during which the supply
+is out of tolerance. The rise time of this signal shall not exceed
+100 ns (10%-90%).</p>
+
+<p>A recommended power-fail protocol, for implementation of systems where
+an early indication of primary power supply failure is available, is
+provided in Section 7.</p>
+
+<p><h>Signal Function</h></p>
+
+<p>BUSRQ[1..0]* Bus request lines</p>
+
+<p>BUSAK[1..0]* Bus acknowledge lines</p>
+
+<p><h>Signal Function</h></p>
+
+<p>SYSCLK System clock</p>
+
+<p>SYSRST* System reset</p>
+
+<hr size="1">
+
+<p><h>Figure 2 &mdash; SYSCLK Timing</h></p>
+
+
+<p><img src="img/STEbus_spec_figure_02.png" width="600"></p>
+
+<pre>t<sub>cycle</sub> = 62.5  &plusmn;  1 ns (16 MHz)
+t<sub>high</sub>  = 31.25 &plusmn; 10 ns
+t<sub>low</sub>   = 31.25 &plusmn; 10 ns</pre>
+
+<hr size="1">
+
+<a name="3.6"><h2>3.6 IEEE Std 1000 Bus Connector Pin Allocations</h2>
+
+
+<a name="3.6.1"><h3>3.6.1 Connector Type</h3>
+
+<p>The IEEE Std 1000 Bus connector pair shall be C064 from IEC 603-2 (1980).
+The male connector shall be on the board and the female connector
+shall be on the backplane.</p>
+
+<a name="3.6.2"><h3>3.6.2 Connector Pin Allocation</h3>
+
+<p>The allocation of the signals described in this standard to pins on the IEEE Std 1000 Bus connector are in Fig 3.</p>
+
+<p>The backplane tracking arrangement shown is recommended so as to allow the signal 0&nbsp;V return traces to provide guard track protection
+between strobes and signal sets.</p>
+
+<hr size="1">
+
+<p><h>Figure 3 &mdash; IEEE Std 1000 Bus Connector</h></p>
+
+<table border="0" cellpadding="0" cellspacing="0"  >
+<tr>
+<th rowspan="2">Pin</th>
+<th colspan="3">Row</th>
+</tr>
+<tr>
+<th>a<br><img src="img/pixel_clear.png" width="115" height="1"></th>
+<th>b<br><img src="img/pixel_clear.png" width="115" height="1"></th>
+<th>c<br><img src="img/pixel_clear.png" width="115" height="1"></th>
+</tr>
+<tr>
+<td>1</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#Ground">GND</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#Ground">GND</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#+5V">+5V</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#+5V">+5V</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.2">D0</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.2">D1</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.2">D2</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.2">D3</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.2">D4</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.2">D5</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.2">D6</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.2">D7</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td align="center" background="img/pad_with_track_above.png" width="115" height="30"><a href="#3.1.1">A0</a></td>
+<td align="center" background="img/pad_with_track_above.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad_with_track_top_left.png" width="115" height="30"><a href="#Ground">GND</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.1">A2</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.1">A1</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.1">A4</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.1">A3</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.1">A6</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.1">A5</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.1">A8</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.1">A7</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.1">A10</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.1">A9</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.1">A12</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.1">A11</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.1">A14</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.1">A13</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.1">A16</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.1">A15</a></td>
+</tr>
+<tr>
+<td>16</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.1">A18</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.1">A17</a></td>
+</tr>
+<tr>
+<td>17</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.3">CM0</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.1">A19</a></td>
+</tr>
+<tr>
+<td>18</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.3">CM2</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.1.3">CM1</a></td>
+</tr>
+<tr>
+<td>19</td>
+<td align="center" background="img/pad_with_track_above.png" width="115" height="30"><a href="#3.2.1">ADRSTB*</a></td>
+<td align="center" background="img/pad_with_track_above.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad_with_track_top_left.png" width="115" height="30"><a href="#Ground">GND</a></td>
+</tr>
+<tr>
+<td>20</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.2.3">DATACK*</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.2.2">DATSTB*</a></td>
+</tr>
+<tr>
+<td>21</td>
+<td align="center" background="img/pad_with_track_above.png" width="115" height="30"><a href="#3.2.4">TFRERR*</a></td>
+<td align="center" background="img/pad_with_track_above.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad_with_track_top_left.png" width="115" height="30"><a href="#Ground">GND</a></td>
+</tr>
+<tr>
+<td>22</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.3">ATNRQ0*</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.5.2">SYSRST*</a></td>
+</tr>
+<tr>
+<td>23</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.3">ATNRQ2*</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.3">ATNRQ1*</a></td>
+</tr>
+<tr>
+<td>24</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.3">ATNRQ4*</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.3">ATNRQ3*</a></td>
+</tr>
+<tr>
+<td>25</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.3">ATNRQ6*</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.3">ATNRQ5*</a></td>
+</tr>
+<tr>
+<td>26</td>
+<td align="center" background="img/pad_with_track_bottom_right.png" width="115" height="30"><a href="#Ground">GND</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.3">ATNRQ7*</a></td>
+</tr>
+<tr>
+<td>27</td>
+<td align="center" background="img/pad_pip.png" width="115" height="30"><a href="#3.4.1">BUSRQ0*</a></td>
+<td align="center" background="img/pad_with_track_above.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad_with_track_above.png" width="115" height="30"><a href="#3.4.1">BUSRQ1*</a></td>
+</tr>
+<tr>
+<td>28</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.4.2">BUSAK0*</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.4.2">BUSAK1*</a></td>
+</tr>
+<tr>
+<td>29</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#3.5.1">SYSCLK</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#VSTBY">VSTBY</a></td>
+</tr>
+<tr>
+<td>30</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#Minus12V">-12V</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#Plus12V">+12V</a></td>
+</tr>
+<tr>
+<td>31</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#Plus5V">+5V</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#Plus5V">+5V</a></td>
+</tr>
+<tr>
+<td>32</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#Ground">GND</a></td>
+<td align="center" background="img/pad.png" width="115" height="30">&nbsp;</td>
+<td align="center" background="img/pad.png" width="115" height="30"><a href="#Ground">GND</a></td>
+</tr>
+</table>
+
+<hr size="1">
+
+<a name="4"><h1>4. Arbitration</h1>
+
+<p>This section defines the protocol that is used by IEEE Std 1000 Bus
+masters to gain control of the IEEE Std 1000 Bus.</p>
+
+<p>The following signals are used to effect allocation of bus control within IEEE Std 1000 Bus systems:</p>
+
+<p>BUSRQ [1..0]*</p>
+
+<p>BUSAK [1..0]*</p>
+
+<a name="4.1"><h2>4.1 Arbitration Algorithm</h2>
+
+<p>On power-up, or following a system reset, the arbiter shall have control
+of the bus. All masters (except default masters) must request and
+receive a control allocation grant from the arbiter prior to
+controlling the bus. Only the arbiter may effect a change in
+allocation of bus control within an IEEE Std 1000 Bus system.</p>
+
+<p>Any
+algorithm may be used by the arbiter to determine which of the bus
+request levels will be granted when the current master releases the
+bus, although, by convention, the BUSRQ0*/BUSAK0*, request/grant pair
+have priority over BUSRQ1*/BUSAK1*. The arbiter may award preference
+to one requesting level on a priority basis, a round-robin basis, or
+by means of any other algorithm implementable within the control
+transfer protocol.</p>
+
+<a name="4.2"><h2>4.2 Bus Requests</h2>
+
+<p>A Bus request may be initiated by any master within an IEEE Std 1000
+Bus system at any time by asserting one of the BUSRQ* lines. Bus
+requests are level-triggered, meaning that a requesting condition is
+indicated by the relative voltage level present on a BUSRQ<I>n</I> line
+rather than by the active transition from one state to another.</p>
+
+<p>A master, having asserted one of the BUSRQ<I>n</I> lines, shall continue to
+assert it for the entire period during which it desires to control
+the bus.</p>
+
+<p>NOTE &mdash; Multiple masters may be connected to a single BUSRQ<I>n</I> line
+only when it can be assured that more than one master cannot request
+the bus at the same time, on the same requesting level.</p>
+
+<a name="4.3"><h2>4.3 Bus Grants</h2>
+
+<p>BUSAK0* or BUSAK1* are asserted by the arbiter in response to the
+corresponding requests, BUSRQ0* and BUSRQ1*. The arbiter shall not
+assert either of these grant lines in the absence of a corresponding
+bus request. In addition, the arbiter shall not assert both bus
+acknowledge lines simultaneously under any circumstances.</p>
+
+<p>A master asserting a bus request line and detecting the corresponding
+bus acknowledge line asserted may assume control of the bus. The
+arbiter, having asserted a bus acknowledge line, shall continue to
+assert it for the entire period during
+which the current master continues to assert the corresponding bus
+request line.</p>
+
+<a name="4.4"><h2>4.4 Control Allocation Sequence</h2>
+
+<p>Figure 4 shows the handshake-signal flow during an allocation of bus
+control. The sequence of events for all allocations
+of bus control shall conform to the following description:</p>
+
+<p>A master may request allocation of the IEEE Std 1000 Bus at any time by
+asserting one of the BUSRQ* lines except that a master may not assert
+BUSRQ<I>n</I>*
+until the corresponding BUSAK<I>n</I>*
+has been released from a previous cycle.</p>
+
+<p>The arbiter, upon detecting BUSRQ<I>n</I>*
+active, and having first assured that the bus is available, shall assert BUSAK<I>n</I>
+indicating that the bus is available for use by the requesting master. The
+arbiter shall not assert BUSAK<I>n</I>*
+in the absence of a corresponding BUSRQ<I>n</I>*. The bus is available for arbitration if the arbiter is not issuing a
+bus grant to any master, either by asserting BUSAK<I>n</I>*
+or by granting to the bus to its own on-board master (if one is
+present).</p>
+
+<p>The requesting master, upon detecting that BUSAK<I>n</I>*
+has been made active, shall assume control of the bus.</p>
+
+<p>Upon completing the desired data transfer sequences, the current master
+shall cease driving all bus lines and shall then release BUSRQ<I>n</I>*.</p>
+
+<p>The arbiter, upon detecting that the BUSRQ<I>n</I>*
+is no longer asserted, shall release BUSAK<I>n</I>*.</p>
+
+<hr size="1">
+
+<p><h>Figure 4 &mdash; Control Transfer Flow Diagram</h></p>
+
+<table style="register">
+<tr>
+<th>Arbiter</th>
+<th>Master</th>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td class="bitsbox">Wait for BUSAK<i>n</i>* Released<br>
+Assert BUSRQ<i>n</i>*</td>
+</tr>
+<tr>
+<td class="bitsbox">Assert BUSAK<i>n</i>* when bus is available</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td class="bitsbox"><p>Decode BUSAK<i>n</i>* and BUSRQ<i>n</i>* Asserted</p>
+<p>Enable bus drivers and assume bus control.<br>
+Perform desired data transfer sequences</p>
+<p>Disable bus drivers</p>
+<p>Release BUSRQ<i>n</i>*</p></td>
+</tr>
+<tr>
+<td class="bitsbox">Release BUSAK<i>n</i>*</td>
+<td align="center"></td>
+</tr>
+</table>
+
+<hr size="1">
+
+<p><h>Figure 5 &mdash; Example of Multiple Master Implementation</h></p>
+
+<p><img src="img/STEbus_spec_figure_05.png" width="600"></p>
+
+<hr size="1">
+
+<a name="5"><h1>5. Data Transfer Protocol</h1>
+
+<p>This section defines the protocol and timing requirements necessary to
+effect data transfer sequences across the IEEE Std 1000 Bus. All data
+are transferred as single bytes using an asynchronous interlocked
+handshake. The asynchronous nature of the protocol allows
+communication between masters and slaves of widely differing speeds,
+and is essentially self-adaptive to changing system configurations.</p>
+
+<p>Indivisible read-modify-write sequences are accommodated within the protocol,
+allowing synchronization of tasks in a multiple processor system by
+use of lock variables.</p>
+
+<p>A high-speed <I>burst </I>mode of data transfer is also specified, 
+allowing for rapid movement of contiguous data blocks between boards.</p>
+
+<p>Figure 6 illustrates the various types of sequences accommodated by the IEEE
+Std 1000 Bus data transfer protocol.</p>
+
+<p>The signals used for data transfer sequences are</p>
+
+<p>Throughout this section the word master implies current master, that is, it is
+assumed that the master discussed has been allocated control of the
+IEEE Std 1000 Bus by means of the protocol described in Section 4 of
+this standard.</p>
+
+<table border="1" cellspacing="0" cellpadding="5">
+<tr><th>Signal</th><th>Source</th></tr>
+<tr><td>A[19..0]</td><td>Master</td></tr>
+<tr><td>D[7..0]</td><td>Master during write, slave during read, and vector-fetch</td></tr>
+<tr><td>CM[2..0]</td><td>Master</td></tr>
+<tr><td>ADRSTB*</td><td>Master</td></tr>
+<tr><td>DATSTB*</td><td>Master</td></tr>
+<tr><td>DATACK*</td><td>Slave</td></tr>
+<tr><td>TFRERR*</td><td>Any board</td></tr>
+</table>
+
+<hr size="1">
+
+<p><h>Figure 6 &mdash; IEEE Std 1000 Bus Data Transfer Sequences</h></p>
+
+<table border="1" cellspacing="0" cellpadding="5" width="100%">
+<tr><td>
+
+
+
+<p><h>Single Data Sequence, read or write:</h></p>
+
+<table class="register"; style="background: #FFFFFF;">
+<tr><td>A[19..0]</td><td bgcolor="#C0C0C0" width="40">&nbsp;</td><td class="bitsbox">Address</td><td bgcolor="#C0C0C0" width="40">&nbsp;</td></tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td>D[7..0]</td><td bgcolor="#C0C0C0" width="40">&nbsp;</td><td class="bitsbox">Data</td><td bgcolor="#C0C0C0" width="40">&nbsp;</td></tr>
+</table>
+
+</td></tr>
+<tr><td>
+
+<p><h>Mixed Data Sequence, read or write:</h></p>
+
+<table class="register"; style="background: #FFFFFF;">
+<tr><td>A[19..0]</td><td bgcolor="#C0C0C0" width="40">&nbsp;</td><td colspan="3" class="bitsbox">Address</td><td bgcolor="#C0C0C0" width="40">&nbsp;</td></tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td>D[7..0]</td><td bgcolor="#C0C0C0" width="40">&nbsp;</td><td class="bitsbox">Data (read)</td><td bgcolor="#C0C0C0">&nbsp;</td><td class="bitsbox">Data (write)</td><td bgcolor="#C0C0C0" width="40">&nbsp;</td></tr>
+</table>
+
+</td></tt>
+<tr><td>
+
+<p><h>Block Transfer Sequence, all reads or all writes:</h></p>
+
+<table class="register"; style="background: #FFFFFF;">
+<tr><td>A[19..0]</td><td bgcolor="#C0C0C0" width="40">&nbsp;</td><td colspan="9" class="bitsbox">Address</td><td bgcolor="#C0C0C0" width="40">&nbsp;</td></tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td>D[7..0]</td><td bgcolor="#C0C0C0" width="40">&nbsp;</td><td class="bitsbox">Data</td><td bgcolor="#C0C0C0">&nbsp;</td><td class="bitsbox">Data</td><td bgcolor="#C0C0C0">&nbsp;</td><td class="bitsbox">Data</td><td bgcolor="#C0C0C0">&nbsp;</td><td class="bitsbox">Data</td><td bgcolor="#C0C0C0" width="40">&nbsp;</td><td class="bitsbox">Data</td><td bgcolor="#C0C0C0" width="40">&nbsp;</td></tr>
+</table>
+
+
+</td></tr>
+</table>
+
+<hr size="1">
+
+<a name="5.1"><h2>5.1 Read Sequence</h2>
+
+<p>Data transfers from slave to master are designated read sequences. Figure
+8 illustrates the handshake-signal flow, and Fig 10 specifies the
+signal timing parameters for a read sequence. Read sequences shall
+conform to the following description:</p>
+
+<OL>
+<LI><p>The master places the address of the targeted memory or I/O location on
+	the address lines.<BR>NOTE &mdash; The master may assert the appropriate command code at this time.</p>
+
+<LI><p>After a setup time, during which the address lines become valid, and
+	having ensured that DATACK* is released from the previous cycle, the
+	master shall assert ADRSTB*.</p>
+
+<LI><p>The master shall activate the command lines, CM[2..0],
+	to indicate the type of transfer.</p>
+
+<table border="1" cellpadding="5" cellspacing="0"  >
+<tr><th>CM2</th><th>CM1</th><th>CM0</th><th>Transfer</th></tr>
+<tr><td align="center">1</td><td align="center">0</td><td align="center">1</td><td>I/O Read</td></tr>
+<tr><td align="center">1</td><td align="center">1</td><td align="center">1</td><td>Memory read</td></tr>
+</table>
+
+<LI><p>After a setup time during which the command lines become valid, the
+	master shall assert DATSTB* indicating the presence of valid data on
+	the command lines, and that it is ready to accept data.</p>
+
+<LI><p>The addressed slave shall enable its data bus drivers, placing
+	requested data on the data lines.</p>
+
+<LI><p>After a setup time, during which the data lines become valid, the
+	addressed slave shall assert DATACK* indicating that the data is
+	available.</p>
+
+<LI><p>In response to DATACK* the master shall accept the data and shall
+	release DATSTB* indicating to the slave that it must remove the data
+	from the data lines.</p>
+
+<LI><p>Upon detecting either DATSTB* or ADRSTB* released, the slave
+	disables its data bus drivers and releases DATACK* indicating that
+	the sequence is complete.</p>
+
+</OL>
+
+
+
+<hr size="1">
+
+<p><h>Figure 7 &mdash; Read Sequence Flow Diagram</h></p>
+
+
+<table style="register">
+<tr>
+<th>Master</th>
+<th>Slave</th>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td class="bitsbox"><p>Activate Address Lines after TisA<br>
+Wait for DATACK* Released<br>
+Assert ADRSTB*</p></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td class="bitsbox"><p>Activate Command Lines<br>
+Assert DATSTB* after TisD</p></td>
+<td class="bitsbox">Decode Address</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td class="bitsbox"><p>Decode Command</p>
+<p>Activate Data lines<br>
+Assert DATACK* after TisD</p>
+</td>
+</tr>
+<tr>
+<td class="bitsbox"><p>Accept Data<br>
+Release ADRSTB* and DATSTB*</p></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td class="bitsbox"><p>Release Address Lines<br>
+Release Command Lines</p></td>
+<td class="bitsbox"><p>Disable Data Bus Drivers<br>
+Release DATACK*</p></td>
+</tr>
+</table>
+
+
+<hr size="1">
+
+<a name="5.2"><h2>5.2 Write Sequence</h2>
+
+<p>Data transfers from masters to slaves are designated write sequences. Figure 9 illustrates the handshake signal flow, and Fig 11 specifies
+the signal timing parameters for a write sequence. Write sequences
+shall conform to the following description:</p>
+
+<OL>
+<LI><p>The master places the address of the targeted memory or I/O location on
+	the address lines.<BR>NOTE &mdash; 
+	The master may assert the appropriate command code at this time.</p>
+
+<LI><p>After a setup time, during which the address lines become valid, and
+	having ensured DATACK* is released from the previous cycle, the
+	master shall assert ADRSTB*.</p>
+
+<LI><p>The master shall activate the command lines, CM[2..0],
+	to indicate the type of transfer, and shall place the data to be
+	transferred on the data lines.</p>
+
+<LI><p>After a setup time, during which the data lines and the command
+	lines become valid, the master shall assert DATSTB* indicating the
+	presence of valid data on the data and command lines.</p>
+
+<LI><p>The addressed slave shall accept the data and shall assert DATACK*
+	to indicate that the transfer may be terminated.</p>
+
+<table border="1" cellpadding="5" cellspacing="0">
+<tr><th>CM2</th><th>CM1</th><th>CM0</th><th>Transfer</th></tr>
+
+<tr><td align="center">1</td><td align="center">0</td><td align="center">0</td><td>I/O Write</td></tr>
+<tr><td align="center">1</td><td align="center">1</td><td align="center">0</td><td>Memory write</td></tr>
+</table>
+<LI><p>In response to DATACK* the master shall release ADRSTB* and DATSTB*.</p>
+
+<LI><p>Upon detecting either DATSTB* or ADRSTB* released, the slave shall
+release DATACK* indicating that the sequence is complete.</p>
+</OL>
+
+<hr size="1">
+
+<p><h>Figure 8 &mdash; Write Sequence Flow Diagram</h></p>
+
+<p></p>
+
+<table style="register">
+<tr>
+<th>Master</th>
+<th>Slave</th>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td class="bitsbox"><p>Activate Address Lines after TisA</p>
+<p>Wait for DATACK* Released</p>
+<p>Assert ADRSTB*</p></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td class="bitsbox"><p>Activate Command Lines</p>
+<p>Activate Data Lines</p>
+<p>Assert DATSTB* after TisD</p></td>
+<td class="bitsbox">Decode Address</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td class="bitsbox"><p>Decode Command</p>
+<p>Accept Data</p>
+<p>Assert DATACK*</p>
+</td>
+</tr>
+<tr>
+<td class="bitsbox"><p>Release ADRSTB* and DATSTB*</p></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td class="bitsbox"><p>Release Address Lines</p>
+<p>Release Command and Data Lines</p></td>
+<td class="bitsbox"><p>Release DATACK*</p></td>
+</tr>
+</table>
+
+<hr size="1">
+
+<p><h>Figure 9 &mdash; Read-Modify-Write Sequence Flow Diagram</h></p>
+
+<p></p>
+
+<table style="register">
+<tr>
+<th>Master</th>
+<th>Slave</th>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td class="bitsbox"><p>Activate Address Lines after TisA</p>
+<p>Wait for DATACK* Released</p>
+<p>Assert ADRSTB*</p></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td class="bitsbox"><p>Activate Command Lines</p>
+<p>Assert DATSTB* after TisD</p></td>
+<td class="bitsbox">Decode Address</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td class="bitsbox"><p>Decode Command</p>
+<p>Activate Data lines</p>
+<p>Assert DATACK* after TisD</p>
+</td>
+</tr>
+<tr>
+<td class="bitsbox"><p>Accept Data</p>
+<p>Release DATSTB*</p></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td class="bitsbox"><p>Modify Data</p></td>
+<td class="bitsbox"><p>Disable Data Bus Drivers</p>
+<p>Release DATACK*</p></td>
+</tr>
+<tr>
+<td class="bitsbox"><p>Change CM0 state</p>
+<p>Activate Data Lines after TisD</p>
+<p>Wait for DATACK* Released</p>
+<p>Assert DATSTB*</p></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td class="bitsbox"><p>Decode Command</p>
+<p>Accept Data</p>
+<p>Assert DATACK*</p>
+</td>
+</tr>
+<tr>
+<td class="bitsbox"><p>Release ADRSTB* and DATSTB*</p></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td class="bitsbox"><p>Release Address Lines</p>
+<p>Release Command and Data Lines</p></td>
+<td class="bitsbox"><p>Release DATACK*</p></td>
+</tr>
+</table>
+
+
+<hr size="1">
+
+<a name="5.3"><h2>5.3 Read-Modify-Write Sequence</h2>
+
+<p>Sequences
+during which the data is transferred to the master, operated on by
+the master, and subsequently transferred from the master to the same
+address, in a single indivisible sequence are designated
+read-modify-write sequences.</p>
+
+<p>Figure 9 illustrates the handshake signal flow, and Fig 12 specifies the
+signal timing parameters for a read-modify-write sequence. Read-modify-write sequences shall conform to the following
+description:</p>
+
+<OL>
+<LI><p>The master places the address of the targeted memory or I/O location on
+	the address lines.<BR>NOTE &mdash; 
+	The master may assert the appropriate command code at this time.</p>
+
+<LI><p>After a setup time, during which the address lines become valid, and
+	having ensured DATACK* is released from the previous cycle, the
+	master shall assert ADRSTB*.</p>
+
+<LI><p>The master shall activate the command lines, CM[2..0],
+	to indicate the type of transfer.</p>
+
+<LI><p>After a setup time during which the command lines become valid the
+	master shall assert DATSTB* indicating the presence of valid data on
+	the command lines, and that it is ready to accept data.</p>
+
+<LI><p>The addressed slave shall enable its data bus drivers, placing the
+	requested data on the data lines. A slave shall not respond to
+	DATSTB* unless ADRSTB* is asserted.</p>
+
+<LI><p>After setup time, during which the data lines become valid, the
+	addressed slave shall assert DATACK* indicating that the data is
+	available.</p>
+
+
+<table border="1" cellpadding="5" cellspacing="0"  >
+<tr><th>CM2</th><th>CM1</th><th>CM0</th><th>Transfer</th></tr>
+<tr><td align="center">1</td><td align="center">0</td><td align="center">1</td><td>I/O Read</td></tr>
+<tr><td align="center">1</td><td align="center">1</td><td align="center">1</td><td>Memory read</td></tr>
+</table>
+</li>
+
+<LI><p>In response to DATACK* the master shall accept the data and shall
+	release DATSTB*, indicating to the slave that it must remove the
+	data from the data lines.</p>
+
+<LI><p>Upon detecting DATSTB* released, the slave disables its data bus
+	drivers and releases DATACK* indicating that the read transfer is
+	complete.</p>
+
+<LI><p>After operating on the data and detecting DATACK* released, the
+	master shall activate command line CM0 (logic 0), indicating a write
+	command, and shall place the modified data to be transferred on the
+	data lines.</p>
+
+<LI><p>After a setup time, during which the data lines and command line CM0
+	become valid, the master shall assert DATSTB* indicating the
+	presence of valid data on the data and command lines.</p>
+
+<LI><p>The addressed slave shall accept the data and shall assert DATACK*
+	to indicate that the transfer may be terminated. 
+	</p>
+
+<LI><p>In response to DATACK* the master shall release ADRSTB* and DATSTB*.</p>
+
+<LI><p>Upon detecting either DATSTB* or ADRSTB* released, the slave shall
+	release DATACK* indicating that the sequence is complete.</p>
+
+</OL>
+
+<hr size="1">
+
+<p><h>Figure 10 &mdash; Read Sequence Timing Diagram</h></p>
+
+<p><img src="img/STEbus_spec_figure_10.png" width="600"></p>
+
+<hr size="1">
+
+<p><h>Figure 11 &mdash; Write Sequence Timing Diagram</h></p>
+
+<p><img src="img/STEbus_spec_figure_11.png" width="600"></p>
+
+<hr size="1">
+
+<p><h>Figure 12 &mdash; Read-Modify-Write Sequence Timing Diagram</h></p>
+
+<p><img src="img/STEbus_spec_figure_12.png" width="600"></p>
+
+<hr size="1">
+
+
+<a name="5.4"><h2>5.4 Vector-Fetch</h2>
+
+<p>In responding to an attention request as described in Section 6. of this
+standard, a master may perform a vector-fetch sequence. The protocol
+and signal timing parameters of a vector-fetch sequence are identical
+to those of a read sequence except that only address lines A[2..0]
+are valid and the command code is:</p>
+
+<table border="1" cellpadding="5" cellspacing="0"  >
+<tr><th>CM2</th><th>CM1</th><th>CM0</th><th>Transfer</th></tr>
+<tr><td align="center">0</td><td align="center">1</td><td align="center">1</td><td>Vector-fetch</td></tr>
+</table>
+
+<a name="5.5"><h2>5.5 Burst Transfer Sequences</h2>
+
+<p>A special form of either read, write, or vector-fetch sequence may be
+supported by IEEE Std 1000 Bus boards. This is referred to as burst
+transfer mode. During a <I>burst
+</I>data transfer the operation proceeds according to the
+previously described protocols except that multiple DATSTB* &mdash; DATACK*
+handshakes occur between the master and the addressed slave. ADRSTB*
+and all used address lines shall remain stable throughout the
+sequence. The command lines shall remain stable throughout the
+sequence.</p>
+
+<p>A slave board may be configured to participate in burst-mode transfer
+sequences by including logic that autoincrements or auto-decrements
+the onboard address on active edges of DATSTB*, or by use of a
+<I>first-in, first-out </I>(FIFO) register array.</p>
+
+<p>Figure 13 specifies the signal timing parameters for burst-mode transfer
+sequences.</p>
+
+
+
+<p><h>Figure 13 &mdash; Burst Mode Transfer Sequence Timing Cycles Illustrated</h></p>
+
+<p><img src="img/STEbus_spec_figure_13.png" width="600"></p>
+
+<a name="5.6"><h2>5.6 General Data Transfer Rules</h2>
+
+<OL>
+<LI><p>A master shall not assert DATSTB* while ADRSTB* is released.</p>
+<LI><p>A slave shall not respond to DATSTB* while ADRSTB* is released.</p>
+<LI><p>A slave shall not assert TFRERR* and DATACK* simultaneously.</p>
+<LI><p>All address lines used in any transfer sequence shall be valid when
+	ADRSTB* is asserted, and shall remain valid until ADRSTB* is released.</p>
+<LI><p>All command lines shall be valid when DATSTB* is asserted, and shall
+	remain valid until DATSTB* is released.</p>
+<LI><p>During read transfers all data lines shall be valid when DATACK* is
+	asserted, and shall remain valid until DATSTB* is released.</p>
+<LI><p>During write transfers all data lines shall be valid when DATSTB* is
+	asserted, and shall remain valid until DATSTB* is released.</p>
+</OL>
+
+<a name="5.7"><h2>5.7 Transfer Error</h2>
+
+<p>A slave that determines the current address to be within its range but
+locally detects a problem with the transfer, such as an illegal
+access or a parity fail, may assert TFRERR* instead of DATACK*. TFRERR* may be asserted at any time that ADRSTB* and DATSTB* are both
+active and shall conform to the same signal timing protocol and
+parameters as DATACK* would otherwise have done. For example, the
+master shall terminate the transfer by releasing DATSTB* and ADRSTB*. The slave shall release TFRERR* and the master may initiate whatever
+system-specific action may be possible to recover from the exception.</p>
+
+<a name="5.8"><h2>5.8 System Time-Out</h2>
+
+<p>A <I>deadman</I> timer shall be provided to guard against system lockup since there exists a finite
+probability that a slave will not respond when utilizing an
+asynchronous protocol (such as when addressing a nonexistent memory
+location or as the result of a metastable condition). This timer
+shall be present on the system controller, and may be additionally
+implemented on any other board.</p>
+
+<p>The system controller shall monitor all bus transfer sequences and shall
+assert TFRERR* at any time that the period from an active transition
+of DATSTB* to the subsequent active transition of DATACK* exceeds a
+designated maximum (this period should be user selectable, and its
+range shall include at least one time-out period that &le;8 &mu;s).
+In such an event the master shall terminate the transfer by releasing DATSTB*.
+The system controller shall release TFRERR* and the master may initiate whatever
+system-specific action may be possible to recover from this exception.</p>
+
+<hr size="1">
+
+<p><h>Table 2 &mdash; Data Transfer Timing Parameters</h></p>
+
+
+<table border="1" cellspacing="0" cellpadding="5">
+<tr><th>Parameter</th><th>Description</th><th>Min / ns</th><th>Max / ns</th></tr>
+<tr><td>TisA</td><td>Address set-up time prior to ADRSTB*</td><td align="right">35</td><td align="right"> &mdash; </td></tr>
+<tr><td>Ton</td><td>Duration of active, released state prior to transition to asserted state</td><td align="right">0</td><td align="right"> &mdash; </td></tr>
+<tr><td>TisD</td><td>Data and CM[2..0] set-up time prior qualifying state. NOTE (2)</td><td align="right">35</td><td align="right"> &mdash; </td></tr>
+<tr><td>Tiss</td><td>Time between ADRSTB* asserted and DATSTB* asserted</td><td align="right">0</td><td align="right"> &mdash; </td></tr>
+<tr><td>TAcc</td><td>Slave access time DATSTB* asserted</td><td align="right"> &mdash; </td><td>NOTE (3)</td></tr>
+<tr><td>ThDw</td><td>Data hold time after DATSTB* released (write)</td><td align="right">0</td><td align="right">45</td></tr>
+<tr><td>ThCM</td><td>Command hold time after DATSTB* released</td><td align="right">0</td><td align="right"> &mdash; </td></tr>
+<tr><td>ThDr</td><td>Data hold time after DATSTB*released (read)</td><td align="right">0</td><td align="right"> &mdash; </td></tr>
+<tr><td>Tdak</td><td>Delay between data lines inactive to DATACK* released</td><td align="right">-20</td><td align="right"> &mdash; </td></tr>
+<tr><td>ThAS</td><td>ADRSTB* hold time after DATSTB* released</td><td align="right">0</td><td align="right"> &mdash; </td></tr>
+<tr><td>ThA</td><td>Address hold time after ADRSTB* released</td><td align="right">0</td><td align="right"> &mdash; </td></tr>
+<tr><td>Toff</td><td>Hold time of active, released state</td><td align="right">0</td><td align="right"> &mdash; </td></tr>
+<tr><td>Tnxt</td><td>Delay between DATACK* released and ADRSTB* asserted to next cycle</td><td align="right">0</td><td align="right"> &mdash; </td></tr>
+<tr><td>TAkh</td><td>DATACK* hold time after DATSTB* released</td><td align="right">0</td><td align="right">120</td></tr>
+</table>
+
+<p>NOTES:</p>
+
+<ol>
+<li><p>For high to low transitions timings are from/to low
+threshold. For low to high transitions timings are from/to high
+threshold.</p></li>
+
+<li><p>Valid data is qualified by DATSTB* in write sequences and by
+DATACK* in read and vector fetch sequences.</p></li>
+
+<li><p>Maximum value specified by manufacturer. See 5.8.</p></li>
+</ol>
+
+<hr size="1">
+
+<a name="6"><h1>6. Inter-Board Signaling</h1>
+
+<a name="6.1"><h2>6.1 Overview</h2>
+
+<p>To enable IEEE Std 1000 Bus systems to perform optimally in real-time
+applications, to respond effectively to error conditions, and to
+support techniques for rapid movement of blocks of data, a set of
+eight attention request lines are provided. These lines allow
+signaling between boards that is essentially unrelated to, and
+independent of the data transfer protocol, otherwise used to effect
+inter-board communications.</p>
+
+<p>The attention request lines are provided to allow a board to alert one or
+more other boards of the occurrence of some event that requires a
+change in flow or context of the current system activity. The event
+may be a need for service as in the case of a traditional <I>interrupt</I>,
+a need for DMA transfer, an error condition at the system-level (for
+example, power failure), an error condition at the board-level (for
+example, parity failure) or any other system-specific or
+time-critical event.</p>
+
+<p>Figure 14 shows a typical implementation of the attention request lines. This section details the usage of the attention request lines, and
+the corresponding protocols that are utilized within IEEE Std 1000 Bus systems for specialized interboard communication.</p>
+
+<p>The signal lines are</p>
+
+<blockquote>
+<p>ATNRQ[7..0]*</p>
+
+<p>A[2..0]</p>
+
+<p>CM[2..0]</p>
+
+<p>D[7..0]</p>
+
+<p>ADRSTB*</p>
+
+<p>DATSTB*</p>
+
+<p>DATACK*</p>
+
+<p>TFRERR*</p>
+
+</blockquote>
+
+<hr size="1">
+
+<p><h>Figure 14 &mdash; Example ATNRQ<I>n</I>* Implementation</h></p>
+
+<p><img src="img/STEbus_spec_figure_14.png" width="600"></p>
+
+<hr size="1">
+
+<a name="6.2"><h2>6.2 Attention Request Lines (ATNRQ[7..0]*)</h2>
+
+<p>An attention request is initiated by a board asserting one of the eight
+attention request lines. A request may be used to gain the attention
+of one or more other boards. Any board may be connected to any of the
+eight request lines, and multiple boards may be connected to the same
+request line. In this way requests or status flags may be <I>broadcast
+</I>on a global level within a system.</p>
+
+<p>Requests are level-triggered, meaning that a requesting condition is indicated
+by the relative voltage level present on any request line rather than
+by the active transition of the signal from one state to another.</p>
+
+<p>It is recommended that boards capable of asserting an ATNRQn* line are
+designed in such a way that it is possible to disable or reassign the
+signal to any other ATNRQn* line, and that boards capable of
+responding to attention requests are designed in such a way that it
+is possible to inhibit or reassign an incoming ATNRQn* signal to any
+of its request inputs.</p>
+
+<a name="6.2.1"><h3>6.2.1 Attention Request Priority</h3>
+
+<p>Boards
+requesting attention within an IEEE Std 1000 Bus system may be
+assigned a priority for response. The attention request lines are
+assigned a priority with ATNRQ0* having the highest priority and
+ATNRQ7* having the lowest priority.</p>
+
+<p>In general the priority schemes utilized within a given system are
+system specific and will depend on the chosen function of each
+attention request line and the way in which specific functions are
+allocated to each attention request line. However, it is recommended
+that, in systems utilizing these lines for both DMA requests and
+interrupt (or other) requests, ATNRQ[3..0[*
+should be utilized for interrupt requests and ATNRQ[7..4]
+* for DMA requests.</p>
+
+<p>It is not implied that interrupt requests, DMA request, or any other
+requests must participate in any larger priority scheme where one
+group of functional uses of attention request lines has priority over
+any other. Rather, it is assumed that several priority schemes may
+exist, which may or may not be related to one another, and which may
+be user assigned according to specific system requirements.</p>
+
+<a name="6.3"><h2>6.3 Response to Interrupt Attention Requests</h2>
+
+<p>A master receiving an interrupt by way of an attention request line may
+respond in one of three ways</p>
+
+<OL>
+<LI><p>Implicit	response</p>
+<LI><p>Explicit response</p>
+<LI><p>Local action response</p>
+</OL>
+
+<a name="6.3.1"><h3>6.3.1 Implicit Response</h3>
+
+<p>An implicit response to an attention request is where a master uses one
+or more read or read-modify-write data transfer sequences
+to discover which device within a system is requesting attention (if
+necessary), and subsequently uses either a read, write, or 
+read-modify-write data transfer sequence to
+acknowledge to the board requesting attention that its request
+has been granted and that the requesting device must release the
+attention request line.</p>
+
+<a name="6.3.2"><h3>6.3.2 Explicit Response</h3>
+
+<p>An explicit response to an attention request is where a master uses the
+vector-fetch data transfer sequence to discover which
+device within a system is requesting attention, and to simultaneously
+acknowledge to the board requesting attention
+that its request has been granted and that the requesting device may
+release the attention request line. The specific
+protocol of the vector-fetch sequence shall conform to the following
+description:</p>
+
+<OL>
+<LI><p>The master places the number of the attention request line that it is
+responding to on address lines A[2..0],
+according to the following table:</p>
+
+
+<table border="1" cellspacing="0" cellpadding="5">
+<tr><th>A2</th><th>A1</th><th>A0</th><th>Acknowledged Line</th></tr>
+<tr><td>0</td><td>0</td><td>0</td><td>ATNRQ0*</td></tr>
+<tr><td>0</td><td>0</td><td>1</td><td>ATNRQ1*</td></tr>
+<tr><td>0</td><td>1</td><td>0</td><td>ATNRQ2*</td></tr>
+<tr><td>0</td><td>1</td><td>1</td><td>ATNRQ3*</td></tr>
+<tr><td>1</td><td>0</td><td>0</td><td>ATNRQ4*</td></tr>
+<tr><td>1</td><td>0</td><td>1</td><td>ATNRQ5*</td></tr>
+<tr><td>1</td><td>1</td><td>0</td><td>ATNRQ6*</td></tr>
+<tr><td>1</td><td>1</td><td>1</td><td>ATNRQ7*</td></tr>
+</table>
+
+<LI><p>After a setup time, during which the address lines become valid, the
+	master shall assert ADRSTB*.</p>
+
+<LI><p>The master shall activate the command lines, CM[2..0],
+	to indicate a vector-fetch transfer.</p>
+
+<table border="1" cellpadding="5" cellspacing="0">
+<tr><th>CM2</th><th>CM1</th><th>CM0</th><th>Transfer</th></tr>
+<tr><td align="center">0</td><td align="center">1</td><td align="center">1</td><td>Vector-fetch</td></tr>
+</table>
+
+<LI><p>After a setup time during which the command lines become valid, the
+	master shall assert DATSTB* indicating the presence of valid data on
+	the command lines, and that it is ready to accept data.</p>
+
+<LI><p>The requesting device, upon decoding the address lines shall enable
+	its data bus drivers, placing its unique identifying vector on the
+	data lines.</p>
+
+<LI><p>After a setup time, during which the data lines become valid, the
+	requesting boards shall assert DATACK* indicating that the vector
+	data is available.</p>
+
+<LI><p>In response to DATACK* the master shall accept the vector data and
+	shall release ADRSTB* and DATSTB*, indicating to the requesting
+	device that it must remove the vector data from the data lines, and
+	that it may release the attention request line.</p>
+
+<LI><p>Upon detecting either DATSTB* or ADRSTB* released, the requesting
+	board disables its data bus drivers and releases DATACK* indicating
+	that the sequence is complete.</p>
+
+</OL>
+
+<p>Multiple bytes of vector data may be transferred by use of the burst-mode data
+transfer protocol.</p>
+
+<p>Boards capable of supplying vector data to an explicit response, by way of a
+vector-fetch data transfer sequence, shall also be capable of
+supplying the same information to an implicit response.</p>
+
+<p>The scheme that is used by an IEEE Std 1000 Bus master to locate the
+interrupt service routine that relates specifically to the
+transferred vector is specific to the CPU device used and is beyond
+the scope of this standard.</p>
+
+<p>Masters capable of explicit response to interrupts by way of attention
+request lines shall also be capable of implicit response.</p>
+
+<a name="6.3.3"><h3>6.3.3 Local Action Response</h3>
+
+<p>A local action response is where a board receiving an interrupt by way
+of an attention request line does not acknowledge the board
+requesting attention but performs some kind of operation locally in
+response to the request. A local action response is typically used
+when error conditions, such as power failure indication, are
+broadcast by way of attention request lines.</p>
+
+<a name="6.4"><h2>6.4 Excluded Utilizations of Attention Request Lines</h2>
+
+<p>For any board to be considered IEEE Std 1000 Bus compatible, it shall
+remain in compliance with all parts of this standard in the absence
+of any signal applied to any ATNRQn* line. Note that while the
+performance of a given board may be seriously impaired in such
+absence, the operation of other IEEE Std 1000 Bus boards shall in no
+way be impaired whether such signals are absent or not. This
+stipulation is made to specifically exclude the use of ATNRQn* lines
+for implementing signals, which are processor or device-specific,
+generally synchronous in nature, and which may preclude the use of
+that board with any other board otherwise designed in accordance with
+this standard.</p>
+
+<a name="7"><h1>7. Electrical Specifications</h1>
+
+<p>This section specifies the electrical characteristics for IEEE Std 1000
+Bus compatible boards and power supplies.</p>
+
+<p>Recommendations are also given for compatible backplanes and termination networks.</p>
+
+
+
+<p>The IEEE Std 1000 Bus provides an environment for the supply of dc power
+to boards and the transmission of digital logic signals between
+boards within a single subrack, on a single backplane that provides
+the following features:</p>
+
+<OL>
+<LI><p>Distribution of primary dc power using four pins on each connector for each of
+	the +5&nbsp;V and 0&nbsp;V dc supplies.</p>
+
+<LI><p>Distribution of both negative and positive auxiliary supplies
+	utilizing 1 pin per supply on each connector.</p>
+
+<LI><p>Distribution of a stand-by power supply that uses 1 pin on each
+	connector.</p>
+
+<LI><p>Forty-nine controlled impedance signal lines, which are normally
+	terminated at both ends of the backplane.</p>
+
+<LI><p>Four 0&nbsp;V ac return lines each using 1 pin, which are embedded within
+	the signal set as backplane guard tracks.</p>
+
+<LI><p>A maximum length for any signal line of 500&nbsp;mm (20 in), including
+	connection to the termination networks.</p>
+
+<LI><p>Provision for a maximum of 21 boards at a preferred horizontal pitch
+	of 20.32&nbsp;mm (0.8 in).</p>
+</OL>
+
+<p>All boards conforming to the IEEE Std 1000 Bus standard shall adhere to
+the electrical specifications detailed in this section. These
+specifications are provided to create a reliable environment for
+boards to operate within, minimizing the problems of noise and
+crosstalk, and providing a defined time interval for signals to
+become valid after they initially become active.</p>
+
+<p>These specifications do not require the use of any particular semiconductor
+technology, and circuitry implemented in any technology that meets
+these specifications is acceptable.</p>
+
+<a name="7.1"><h2>7.1 Power Supplies</h2>
+
+<p>This subsection details the requirements, and makes additional
+recommendations, to aid the system designer (or integrator) in the
+choice of power supplies and the proper distribution of system power.</p>
+
+<p>The +5&nbsp;V logic supply is the primary power source within a system and
+will normally have the largest current requirement. No board shall
+require a maximum current that exceeds 4 A from this supply. Power
+supply distribution design shall be such that there is no voltage
+drop in the power distribution system, which results in the voltage
+available at any particular board being outside the limits of this
+specification.</p>
+
+<p>The auxiliary (&plusmn;12&nbsp;V) voltage power supply units shall not be required to provide
+greater than 1 A from each supply by any one board within the system.</p>
+
+<p>The standby supply specification provides for the distribution of backup
+power to boards within a system that requires power during periods
+when the primary system supply cannot be maintained. A board shall
+not require greater than 1 A current from this supply. In systems
+that do not require this supply, provision should be made for
+connecting this line to the +5&nbsp;V logic supply.</p>
+
+<p>The power supply sense point, if used, should be at the first point of
+connection of the power supply to the backplane.</p>
+
+<a name="7.1.1"><h3>7.1.1 Supply Tolerances</h3>
+
+<p>Table 3 specifies the power supply requirements for IEEE Std 1000 Bus
+systems. Variation is the tolerance from the nominal specified
+voltage, as measured at any board position on the backplane through
+the connector, that is,</p>
+
+<p>Variation = distribution + line regulation + load regulation</p>
+
+<p>where</p>
+
+<p>Distribution is the voltage loss caused by the power distribution system that consists of:</p>
+
+<OL>
+<LI><p>The backplane resistance.</p>
+
+<LI><p>The power supply to backplane interconnect scheme when the voltage is
+sensed by the power supply at other than the connection point of the
+power supply to the backplane.</p>
+
+<LI><p>Line Regulation and Load Regulation are as defined by the manufacturer of
+a particular power supply, according to a specified set of test
+conditions. These conditions should be specified in such a manner as
+to allow for a reliable calculation of the overall performance,
+which may be achieved within an actual system environment.</p>
+
+
+<p><h>Table 3 &mdash; Power Supply and Distribution</h></p>
+
+<table border="1" cellspacing="0" cellpadding="5">
+<tr><th>Supply</th><th>Nominal<br>voltage</th><th>Variation</th><th>pk-pk Ripple<br>(Below 10 MHz)</th><th>Maximum Current<br>(Per Board/Per System)</th></tr>
+<tr><td>+Vcc</td><td>+5</td><td>+5%, -2.5%</td><td>50 mV</td><td>4 A / 50 A</p>
+<tr><td>+AUX&nbsp;V</td><td>+12</td><td>&plusmn;5%</td><td>50 mV</td><td>1 A / 4 A
+<tr><td>-AUX&nbsp;V</td><td>-12</td><td>&plusmn;5%</td><td>50 mV</td><td>1 A / 4 A</p>
+<tr><td>+VSTBY</td><td>+5</td><td>+5% *</td><td>50 mV</td><td>1 A / 4 A</td>
+<tr><td>GND</td><td>0</td><td>ref</td><td>ref</td><td> &mdash; / &mdash; </p>
+</table>
+
+<p>* Where +VSTBY is connected to +Vcc the variation limits for +Vcc apply.</p>
+
+</OL>
+
+
+<p>The maximum current per board and per system are recommendations only as
+far as the power supplies are concerned, but are requirements for the
+capacity of the backplane power distribution. The following
+requirements are a minimum to enable this to be achieved.</p>
+
+<a name="7.1.2"><h3>7.1.2 Power Distribution</h3>
+
+<p>The following specifications shall be met for all IEEE Std 1000 Bus
+compatible systems and backplanes:</p>
+
+<OL>
+<LI><p>The backplane shall present a resistance from the point at which the dc
+	power is applied to any connector position of &le;5 m&Omega;
+	(compare 25&nbsp;mm [&sim;1 in] wide, 1&nbsp;oz copper track &sim;19 m&Omega;/m).</p>
+
+<LI><p>The backplane shall present a resistance from any signal pin on any
+	connector position to the corresponding signal pin on any other
+	connector position of &lt;1 &Omega; (compare
+	0.5&nbsp;mm [0.020 in] wide, 1&nbsp;oz copper track &sim;0.8 &Omega;v/m).</p>
+
+<LI><p>Power input cables shall include a conductor for the purpose of
+	connecting the equipment to an infinite capacity reference potential
+	such as ground.</p>
+
+</OL>
+
+<a name="7.1.3"><h3>7.1.3 Power-Failure</h3>
+
+<p>In system implementations requiring orderly shutdown in the event of a
+power failure, and where an early indication of primary power supply
+failure is available, it is recommended that attention request line
+ATNRQ0* (see Section 6) be used to signal imminent power failure and
+that the following protocol be adhered to:</p>
+
+<a name="7.1.3.1"><h4>7.1.3.1 Power-Down</h4>
+
+<OL>
+<LI><p>The dc output of the system 5&nbsp;V power supply shall remain within its
+	specified tolerance for at least 4 ms after ATNRQ0* is asserted.</p>
+
+<LI><p>After ATNRQ0* has been asserted, the system controller shall wait at least
+	2 ms and then assert SYSRST*.</p>
+
+<LI><p>SYSRST* shall be asserted at least 50 &mu;s
+	before the dc output of the system 5&nbsp;V power supply falls below its
+	minimum specified tolerance.</p>
+</OL>
+
+<a name="7.1.3.2"><h4>7.1.3.2 Power-Up</h4>
+
+<OL>
+<LI><p>SYSRST* shall remain asserted for at least 200 ms after the dc output of the
+	system 5&nbsp;V power supply reaches its minimum specified tolerance.</p>
+
+<LI><p>SYSRST* shall remain asserted for at least 200 ms after ATNRQ0* is released.</p>
+</OL>
+
+
+
+<a name="7.2"><h2>7.2 Board-Electrical Requirements</h2>
+
+<p>The following specifications shall be met by all IEEE Std 1000 Bus compatible boards:</p>
+
+<OL>
+<LI><p>During power-up, each board shall be responsible for its own reset
+operation as indicated by the SYSRST* signal.</p>
+
+<LI><p>Printed circuit board (PCB) traces for the synchronization signals ADRSTB*,
+DATSTB*, DATACK*, and TFRERR* shall not exceed 50&nbsp;mm (&sim;2 in) if the board is constructed with double-sided material, or 25&nbsp;mm
+(&sim;1 in) if constructed with multilayer material. This distance shall be measured from the
+corresponding driver output, or receiver input, to the first point of contact with the backplane connector.</p>
+
+<LI><p>On power-down (that is, when SYSRST* is active), each board shall
+inhibit any signal from driving IEEE Std 1000 Bus lines.</p>
+
+<LI><p>Under no circumstances will the average current taken through any
+IEEE Std 1000 Bus connector pin exceed 1 A.</p>
+
+</OL>
+
+<a name="7.2.1"><h3>7.2.1 Connector-Electrical Specification</h3>
+
+<p>All IEEE Std 1000 Bus connectors shall conform to IEC Publication 603-2 (1980) specifications.</p>
+
+<a name="7.3"><h2>7.3 Driver and Receiver DC Characteristics</h2>
+
+<p>Any device may be used to drive the bus, or to receive from the bus,
+provided it meets the following specifications.</p>
+
+<OL>
+<LI><p>Receiver devices connected to the synchronization signals ADRSTB*, DATSTB*,
+	DATACK*, TFRERR*, and SYSCLK shall exhibit schmitt trigger
+	characteristics, with a hysteresis of &ge; 200 mV.</p>
+
+<LI><p>It is recommended that all other receiver devices exhibit schmitt
+	trigger characteristics, with a hysteresis of &ge; 200 mV.</p>
+
+<LI><p>All devices connected to the bus should have a negative input-clamp
+	voltage of &le;-1.4&nbsp;V.</p>
+
+<LI><p>The minimum sink current capability of any driver on any line shall
+	be 24 mA at 0.5&nbsp;V. Further, it is recommended that drivers with
+	minimum source capability of 24 mA at 2.4&nbsp;V be used.</p>
+
+<LI><p>The minimum rise and fall transition times (10%-90%) of any line
+	driving device shall be &gt; 5 ns when driving a capacitive load of
+	45&nbsp;pF.</p>
+
+<LI><p>Table 15 specifies the output topology of all signal driving devices
+	used within an IEEE Std 1000 Bus interface system:</p>
+
+<LI><p>A receiver shall recognize a voltage of &le; 0.8&nbsp;V as a logic 0, 
+	and a voltage of &ge; 2.0&nbsp;V as a logic 1.</p>
+
+<LI><p>Figure 3 shows the standard voltage levels expected of all signals
+	that are in accordance with this standard.</p>
+
+</OL>
+<hr size="1">
+<p><h>Table 4 &mdash; Bus Driver Output Topologies</h></p>
+
+
+<table border="1" cellspacing="0" cellpadding="5">
+<tr><th>Signal</th><th>Output Device</th></tr>
+<tr><td>A[19..0]</td><td>Tri-state</td></tr>
+<tr><td>D[7..0]</td><td>Tri-state</td></tr>
+<tr><td>CM[2..0]</td><td>Tri-state</td></tr>
+<tr><td>ADRSTB*</td><td>Tri-state</td></tr>
+<tr><td>DATSTB*</td><td>Tri-state</td></tr>
+<tr><td>DATACK*</td><td>Open-collector (Open-drain)</p>
+<tr><td>BUSRQ[1..0]*</td><td>Open collector (Open-drain)</p>
+<tr><td>TFRERR*</td><td>Open-collector (Open-drain)</p>
+<tr><td>ATNRQ[7..0]*</td><td>Open-collector (Open-drain)</p>
+<tr><td>SYSRST*</td><td>Open-collector (Open-drain)</p>
+<tr><td>SYSCLK</td><td>Totem-pole</td></tr>
+<tr><td>BUSAK[1..0]*</td><td>Totem-pole</td></tr>
+</table>
+
+<hr size="1">
+<p><h>Figure 15 &mdash; Signal Voltage Levels</h></p>
+
+<table border="1" cellspacing="0" cellpadding="5">
+<tr><td valign="bottom" height="100">2.8&nbsp;V</td><td bgcolor="#FF8080">&nbsp;</td><td valign="bottom">Terminator voltage</td></tr>
+<tr><td valign="bottom" height="80">2.4&nbsp;V</td><td bgcolor="#FFC0C0">&nbsp;</td><td valign="bottom">Driver min. output (high)</td></tr>
+<tr><td valign="bottom" height="80">2.0&nbsp;V</td><td bgcolor="#C0C0C0" align="center"><p bgcolor="white">DC noise margin</p></td><td valign="bottom">Receiver max. threshhold</td></tr>
+<tr><td>&nbsp;</td><td height="80">&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;</td><td height="40" bgcolor="#C0C0C0">200&nbsp;mV minimum hysteresis</td><td align="center">Receiver transition region</td></tr>
+<tr><td valign="bottom" height="80">0.8&nbsp;V</td><td>&nbsp;</td><td valign="bottom">Receiver min. threshhold</td></tr>
+<tr><td valign="bottom" height="80">0.4&nbsp;V</td><td bgcolor="#C0C0C0" align="center">DC noise margin</td><td valign="bottom">Driver max. output (low)</td></tr>
+<tr><td valign="bottom" height="80">0.0&nbsp;V</td><td bgcolor="#80FF80">&nbsp;</td><td valign="bottom">Ground reference</td></tr>
+</table>
+<hr size="1">
+<a name="7.4"><h2>7.4 Signal DC Characteristics</h2>
+
+<p>Any board connected to the IEEE Std 1000 Bus, while inactive, shall not exhibit a load (leakage) on to any bus line of &gt;&nbsp;-50
+&mu;A at 2.4&nbsp;V and not &gt;&nbsp;-200 &mu;A at 0.5&nbsp;V.</p>
+
+<a name="7.5"><h2>7.5 Signal AC Characteristics</h2>
+
+<p>No board shall present a capacitance &gt;&nbsp;20&nbsp;pF to any backplane signal line.
+Approximately 1.6&nbsp;pF/in should be allowed for the capacitive effect of PCB
+trace spurs (compare 1&nbsp;oz copper track, 0.98&nbsp;mm [0.025&nbsp;in] wide).</p>
+
+<a name="7.6"><h2>7.6 Backplane AC Specifications</h2>
+
+<p>This subsection defines those characteristics that should be considered in
+the design of IEEE Std 1000 Bus compatible backplanes.</p>
+
+<a name="7.6.1"><h3>7.6.1 Transmission-Line Environment</h3>
+
+<p>All signal lines should be considered as transmission lines so as to
+reliably transmit high-speed digital information. For the
+purpose of calculation of the parameters of this environment, the
+following items apply:</p>
+
+<OL>
+<LI><p>The maximum length of any signal line on the backplane shall not exceed 500&nbsp;mm (19.7&nbsp;in).</p>
+<LI><p>The minimum separation between connectors shall be 20.32&nbsp;mm (0.8&nbsp;in).</p>
+<LI><p>The maximum length of any PCB trace on any IEEE Std 1000 Bus signal line shall not exceed 50&nbsp;mm (2&nbsp;in) on any board.</p>
+</OL>
+
+<a name="7.6.2"><h3>7.6.2 Characteristic Impedance</h3>
+
+<p>The IEEE Std 1000 Bus is designed to take into account the driving
+requirements of high-performance transmission-line backplanes. The
+transmission-line system, together with the specified maximum signal
+length, allow an accurate determination of the time required for a
+signal to be correctly received.</p>
+
+<p>Backplanes should be designed using only microstrips for the signal lines, and
+should provide an unloaded characteristic impedance of 60&nbsp;&Omega;&nbsp;&plusmn;10% 
+including the effects of plated through holes and connectors.</p>
+
+<p>Backplane signal tracks should have a constant width throughout the length of
+the backplane so as to keep the same characteristic impedance
+throughout its length.</p>
+
+<p>Groundplanes are required so as to form a well-defined transmission-line
+environment. All groundplanes shall be continuous, allowing breaks in
+the groundplane only around the holes where connector pins must pass
+through. Under no circumstances should slot lines be allowed to exist
+in the groundplane, whether in the horizontal, vertical, or any other
+direction relative to the signal lines.</p>
+
+<a name="7.7"><h2>7.7 Termination Networks</h2>
+
+<p>Termination shall be made at both ends of the backplane except in the case where
+there are five or fewer slot positions available and the total length
+of the backplane does not exceed 100&nbsp;mm (3.937&nbsp;in). In this event,
+termination may be made at one end only.</p>
+
+<p>The following recommended termination, detailed in Appendix C, should be used:</p>
+
+<OL>
+<LI><p>Each bus line should be tied to a 2.8&nbsp;V &plusmn; 10% active termination voltage
+	through a 270R series resistor.<BR>
+	Alternatively, a passive termination network consisting of a 470R resistor
+	tied to a +5&nbsp;V and a 600R resistor tied to 0&nbsp;V may be used.
+	Any Thevenin equivalent termination may also be used.</p>
+
+<LI><p>In addition, the following lines should be diode clamped between 0&nbsp;V
+	and 0.5&nbsp;V to minimize negative undershoot during transitions:
+	SYSCLK, ADRSTB*, DATSTB*, DATACK*, and TFRERR*.</p>
+
+<LI><p>It is recommended that all termination networks be removable so as
+	to accommodate variations in system implementations, and that they
+	be connected within 20&nbsp;mm (0.787&nbsp;in) of the backplane ends.</p>
+
+</OL>
+<hr size="1">
+<a name="A"><h1>Annex A Applicable IEC Specifications (Informative)</h1>
+
+<p>(These Appendixes are not a part of ANSI/IEEE Std 1000-1987, IEEE Standard
+for an 8-Bit Backplane Interface: STEbus, but are included for information only.)</p>
+
+<p>So as to provide maximum compatibility with existing international
+standards the mechanical specifications for IEEE Std 1000 Bus boards,
+modules, subracks, and connectors have been drawn extensively from
+the following IEC publications:</p>
+
+<OL>
+<LI><p>IEC Publication 249-2 (1970) Printed Boards.</p>
+<LI><p>IEC Publication 297-3 (1984) Dimensions of Mechanical Structures, Subracks and Associated Plug-in Units.</p>
+<LI><p>IEC Publication 297-3 (1984) Supplement A &mdash; Mounting of Connectors in IEC Publication 603-2 (1980).</p>
+<LI><p>IEC Publication 603-2 (1980) Two-Part Connectors for Printed Boards.</p>
+</OL>
+<hr size="1">
+<a name="B"><h1>Annex B Recommended Bus Termination Arrangement (Informative)</h1>
+
+<p>The following active termination circuit is recommended for use at both
+ends of IEEE Std 1000 Bus backplanes in systems utilizing more than
+5-slot positions, and may be used at one end only in systems
+utilizing 5-slot positions or less.</p>
+
+<hr size="1">
+<h2>Figure B.1 &mdash; Bus Terminology Arrangement</h2>
+
+<img src="img/STEbus_spec_figure_B1a.png" width="600"></p>
+<hr size="1">
+<h2>Alternative Passive Termination</h2>
+
+<p><img src="img/STEbus_spec_figure_B1b.png"></p></td>
+
+</BODY>
+</html>
