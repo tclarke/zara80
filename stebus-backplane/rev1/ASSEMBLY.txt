@@ -1,0 +1,43 @@
+Assembly is fairly straighforward except for the items mentioned in the
+errata. The ibom html file is interactive. You can check the items when
+they are ordered and there's a second check when they are installed. Mouse
+over an item to highlight it on the PCB display.
+
+1. Install the regulator (U101) first. It's fairly easy to hand solder. I'd
+suggest using a small jumper (a cut-off tail from a resistor works well) to
+connect pins 1 and 3. Then melt a little solder onto the three pads. Add some
+flux. Rotate the part slightly to pin 2 is on pad 2 and pin 5 is on pad 3. You
+should be able to easily attach those two pins by re-melting the solder.
+Finally, solder pad 1 to the pin 1 and jumper section. Just melt a decent blob
+of solder on to it and everything should flow together.
+
+2. Install the diodes (D101-D106). The line on the diode corresponds to the
+line on the silkscreen.
+
+3. Install the resistors (R101-R104)
+
+4. Install the resitor networks. (RN101-RN106)
+
+5. Install the transistor if you're planning on using ATNRQ0 for power fail.
+
+6. Install the capacitors (C101-C111). I usually do the ceramics first then
+the larger electrolytics.
+
+7. Install the DIN connectors (J101-J107) one at a time. I tack the top and
+bottom pins then just go down one side and up the other.
+
+8. Install the Molex power connector (J105). Use enough solder and give it a
+few seconds to flow properly as these are large pins.
+
+9. Install the pin header (J104) on the pack of the board. You can safely
+install it on the front if you prefer but it's easier to connect on the back.
+
+10. Tone out the power rails by touching to the various ATX power pins with
+one probe and the back of the DIN connectors. Make sure the power rails and
+the GND pins are connected properly. At this point it's safe to plug in an ATX
+supply.
+
+11. Short J104 and make sure the power supply is active. This usually turns on
+a status light and spins up the fan.
+
+12. Test the power rails on the back of the DIN connectors.
