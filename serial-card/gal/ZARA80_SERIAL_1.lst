@@ -1,0 +1,34 @@
+LISTING FOR LOGIC DESCRIPTION FILE: ZARA80_SERIAL_1.pld              Page 1
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# 60008009
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Mon Jun 05 09:28:47 2023
+
+  1:Name     zara80_serial_1 ;
+  2:PartNo   00 ;
+  3:Date     6/2/2023 ;
+  4:Revision 01 ;
+  5:Designer Trevor Clarke ;
+  6:Company  notcows ;
+  7:Assembly None ;
+  8:Location  ;
+  9:Device   g16v8a ;
+ 10:
+ 11:Pin   1 =       !ADRSTB;                /* STEBus ADRSTB */
+ 12:Pin   2 =       !DATSTB;                /* STEBus DATSTB */
+ 13:Pin [3..5] =    [CM2, CM1, CM0];        /* STEBus CM* */
+ 14:Pin   6 =       PORTSEL;                /* True if ADDR matches the board */
+ 15:
+ 16:Pin  19 =       OE;
+ 17:
+ 18:$DEFINE CM_IO 'b'10;
+ 19:
+ 20:OE = [DATSTB,ADRSTB,PORTSEL,CM2,!CM1]:&;
+ 21:
+ 22:
+
+
+
+Jedec Fuse Checksum       (0cf3)
+Jedec Transmit Checksum   (7a57)

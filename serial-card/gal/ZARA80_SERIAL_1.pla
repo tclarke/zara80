@@ -1,0 +1,22 @@
+# Berkeley PLA format generated using
+#
+# CUPL(WM)        5.0a Serial# 60008009
+# Device          g16v8as  Library DLIB-h-40-2
+# Created         Mon Jun 05 09:28:47 2023
+# Name            zara80_serial_1 
+# Partno          00 
+# Revision        01 
+# Date            6/2/2023 
+# Designer        Trevor Clarke 
+# Company         notcows 
+# Assembly        None 
+# Location        
+#
+# Inputs  !ADRSTB CM0 CM1 CM2 
+#         !DATSTB OE PORTSEL 
+# Outputs OE 
+.i 7
+.o 1
+.p 1
+1-011-1 1
+.end

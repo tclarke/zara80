@@ -1,0 +1,15 @@
+Name     ;
+PartNo   ;
+Date     ;
+Revision ;
+Designer ;
+Company  ;
+Assembly ;
+Location ;
+
+
+ORDER: !ADRSTB, CM0, CM1, CM2, !DATSTB, OE, PORTSEL; 
+
+
+VECTORS:
+*******

@@ -1,0 +1,20 @@
+Name     zara80_serial_1 ;
+PartNo   00 ;
+Date     6/2/2023 ;
+Revision 01 ;
+Designer Trevor Clarke ;
+Company  notcows ;
+Assembly None ;
+Location  ;
+Device   g16v8a ;
+
+Pin	  1 =	!ADRSTB;		/* STEBus ADRSTB */
+Pin	  2 =	!DATSTB;		/* STEBus DATSTB */
+Pin [3..5] =	[CM2, CM1, CM0];	/* STEBus CM* */
+Pin	  6 =	PORTSEL;		/* True if ADDR matches the board */
+
+Pin	 19 =	!CS;
+
+$DEFINE CM_IO 'b'10;
+
+CS = [DATSTB,ADRSTB,PORTSEL,CM2,!CM1]:&;

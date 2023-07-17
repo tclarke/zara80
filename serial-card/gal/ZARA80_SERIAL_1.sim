@@ -1,0 +1,18 @@
+%SIGNAL
+PIN   1 = !ADRSTB 
+PIN   5 =  CM0 
+PIN   4 =  CM1 
+PIN   3 =  CM2 
+PIN   2 = !DATSTB 
+PIN  19 =  OE 
+PIN   6 =  PORTSEL 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+OE =>
+    !ADRSTB & !CM1 & CM2 & !DATSTB & PORTSEL
+
+%END

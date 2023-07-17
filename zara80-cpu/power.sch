@@ -1,0 +1,969 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 4 8
+Title "Power Management - zara80 CPU board"
+Date "2022-01-04"
+Rev "1"
+Comp "notcows"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L power:GNDPWR #PWR?
+U 1 1 61DCAA2E
+P 2550 2500
+F 0 "#PWR?" H 2550 2300 50  0001 C CNN
+F 1 "GNDPWR" H 2554 2346 50  0000 C CNN
+F 2 "" H 2550 2450 50  0001 C CNN
+F 3 "" H 2550 2450 50  0001 C CNN
+	1    2550 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+8V #PWR?
+U 1 1 61DCBA66
+P 1800 1850
+F 0 "#PWR?" H 1800 1700 50  0001 C CNN
+F 1 "+8V" H 1815 2023 50  0000 C CNN
+F 2 "" H 1800 1850 50  0001 C CNN
+F 3 "" H 1800 1850 50  0001 C CNN
+	1    1800 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 2500 2550 2400
+$Comp
+L power:GND #PWR?
+U 1 1 61DCF7D7
+P 2850 2500
+F 0 "#PWR?" H 2850 2250 50  0001 C CNN
+F 1 "GND" H 2855 2327 50  0000 C CNN
+F 2 "" H 2850 2500 50  0001 C CNN
+F 3 "" H 2850 2500 50  0001 C CNN
+	1    2850 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2850 2500 2850 2400
+Wire Wire Line
+	2850 2400 2550 2400
+Connection ~ 2550 2400
+Wire Wire Line
+	2550 2400 2550 2300
+$Comp
+L zara80-cpu-rescue:AOZ1282CI-Regulator_Switching U?
+U 1 1 61DCFF2A
+P 2550 2000
+AR Path="/61DCFF2A" Ref="U?"  Part="1" 
+AR Path="/61D88F91/61DCFF2A" Ref="U?"  Part="1" 
+F 0 "U?" H 2550 2367 50  0000 C CNN
+F 1 "AOZ1282CI" H 2550 2276 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" H 3250 1750 50  0001 C CNN
+F 3 "http://aosmd.com/res/data_sheets/AOZ1282CI.pdf" H 2300 1750 50  0001 C CNN
+	1    2550 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61DD178B
+P 3800 2150
+F 0 "R?" H 3870 2196 50  0000 L CNN
+F 1 "49k9" H 3870 2105 50  0000 L CNN
+F 2 "" V 3730 2150 50  0001 C CNN
+F 3 "~" H 3800 2150 50  0001 C CNN
+	1    3800 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61DD1802
+P 3800 2550
+F 0 "R?" H 3870 2596 50  0000 L CNN
+F 1 "9k53" H 3870 2505 50  0000 L CNN
+F 2 "" V 3730 2550 50  0001 C CNN
+F 3 "~" H 3800 2550 50  0001 C CNN
+	1    3800 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 61DD212E
+P 1800 2050
+F 0 "C?" H 2050 2000 50  0000 R CNN
+F 1 "4.7u" H 2050 2100 50  0000 R CNN
+F 2 "" H 1838 1900 50  0001 C CNN
+F 3 "~" H 1800 2050 50  0001 C CNN
+	1    1800 2050
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1800 1900 2050 1900
+Wire Wire Line
+	1800 1850 1800 1900
+Wire Wire Line
+	1800 2200 1800 2400
+Wire Wire Line
+	1800 2400 2550 2400
+$Comp
+L Device:C C?
+U 1 1 61DD4164
+P 3250 1800
+F 0 "C?" V 2998 1800 50  0000 C CNN
+F 1 "10n" V 3089 1800 50  0000 C CNN
+F 2 "" H 3288 1650 50  0001 C CNN
+F 3 "~" H 3250 1800 50  0001 C CNN
+	1    3250 1800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2950 1900 3000 1900
+Wire Wire Line
+	3000 1900 3000 1800
+Wire Wire Line
+	3000 1800 3100 1800
+Wire Wire Line
+	3400 1800 3450 1800
+Wire Wire Line
+	3450 1800 3450 1950
+Wire Wire Line
+	3450 1950 3000 1950
+Wire Wire Line
+	3000 1950 3000 2000
+Wire Wire Line
+	3000 2000 2950 2000
+$Comp
+L Device:L L?
+U 1 1 61DD5016
+P 3350 2000
+F 0 "L?" V 3400 2200 50  0000 C CNN
+F 1 "22u" V 3400 2050 50  0000 C CNN
+F 2 "" H 3350 2000 50  0001 C CNN
+F 3 "~" H 3350 2000 50  0001 C CNN
+	1    3350 2000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3000 2000 3100 2000
+Connection ~ 3000 2000
+$Comp
+L Device:D_Schottky D?
+U 1 1 61DD5D16
+P 3100 2250
+F 0 "D?" V 3054 2330 50  0000 L CNN
+F 1 "D_Schottky" V 3145 2330 50  0000 L CNN
+F 2 "" H 3100 2250 50  0001 C CNN
+F 3 "~" H 3100 2250 50  0001 C CNN
+	1    3100 2250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3100 2100 3100 2000
+Connection ~ 3100 2000
+Wire Wire Line
+	3100 2000 3200 2000
+Wire Wire Line
+	3500 2000 3800 2000
+Wire Wire Line
+	3700 2100 3700 2350
+Wire Wire Line
+	3700 2350 3800 2350
+Wire Wire Line
+	3800 2350 3800 2300
+Wire Wire Line
+	2950 2100 3100 2100
+Connection ~ 3100 2100
+Wire Wire Line
+	3100 2100 3700 2100
+Wire Wire Line
+	3800 2350 3800 2400
+Connection ~ 3800 2350
+Wire Wire Line
+	2850 2400 3100 2400
+Connection ~ 2850 2400
+Wire Wire Line
+	3100 2400 3450 2400
+Wire Wire Line
+	3450 2400 3450 2750
+Wire Wire Line
+	3450 2750 3800 2750
+Wire Wire Line
+	3800 2750 3800 2700
+Connection ~ 3100 2400
+$Comp
+L Device:C C?
+U 1 1 61DD8E3E
+P 4200 2300
+F 0 "C?" H 4315 2346 50  0000 L CNN
+F 1 "10u" H 4315 2255 50  0000 L CNN
+F 2 "" H 4238 2150 50  0001 C CNN
+F 3 "~" H 4200 2300 50  0001 C CNN
+	1    4200 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 2450 4200 2750
+Wire Wire Line
+	4200 2750 3800 2750
+Connection ~ 3800 2750
+Wire Wire Line
+	3800 2000 4200 2000
+Wire Wire Line
+	4200 2000 4200 2150
+Connection ~ 3800 2000
+$Comp
+L power:+5V #PWR?
+U 1 1 61DDA659
+P 4350 1950
+F 0 "#PWR?" H 4350 1800 50  0001 C CNN
+F 1 "+5V" H 4365 2123 50  0000 C CNN
+F 2 "" H 4350 1950 50  0001 C CNN
+F 3 "" H 4350 1950 50  0001 C CNN
+	1    4350 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 2000 4350 2000
+Wire Wire Line
+	4350 2000 4350 1950
+Connection ~ 4200 2000
+$Comp
+L Device:R R?
+U 1 1 61DDB271
+P 2050 2050
+F 0 "R?" H 1900 2150 50  0000 L CNN
+F 1 "4k7" V 2050 2000 50  0000 L CNN
+F 2 "" V 1980 2050 50  0001 C CNN
+F 3 "~" H 2050 2050 50  0001 C CNN
+	1    2050 2050
+	1    0    0    -1  
+$EndComp
+Connection ~ 2050 1900
+Wire Wire Line
+	2050 1900 2150 1900
+Connection ~ 1800 1900
+Wire Wire Line
+	2050 2200 2050 2300
+Wire Wire Line
+	2050 2300 2150 2300
+Wire Wire Line
+	2150 2300 2150 2100
+Wire Notes Line
+	6000 7800 6000 7100
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 61DE04E7
+P 5550 7350
+F 0 "#FLG?" H 5550 7425 50  0001 C CNN
+F 1 "PWR_FLAG" H 5550 7523 50  0000 C CNN
+F 2 "" H 5550 7350 50  0001 C CNN
+F 3 "~" H 5550 7350 50  0001 C CNN
+	1    5550 7350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 61DE0DDB
+P 5750 7550
+F 0 "#FLG?" H 5750 7625 50  0001 C CNN
+F 1 "PWR_FLAG" H 5750 7723 50  0000 C CNN
+F 2 "" H 5750 7550 50  0001 C CNN
+F 3 "~" H 5750 7550 50  0001 C CNN
+	1    5750 7550
+	1    0    0    1   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 61DE140D
+P 5750 7500
+F 0 "#PWR?" H 5750 7350 50  0001 C CNN
+F 1 "+5V" H 5765 7673 50  0000 C CNN
+F 2 "" H 5750 7500 50  0001 C CNN
+F 3 "" H 5750 7500 50  0001 C CNN
+	1    5750 7500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 7500 5750 7550
+$Comp
+L power:GND #PWR?
+U 1 1 61DE218A
+P 5550 7400
+F 0 "#PWR?" H 5550 7150 50  0001 C CNN
+F 1 "GND" H 5555 7227 50  0000 C CNN
+F 2 "" H 5550 7400 50  0001 C CNN
+F 3 "" H 5550 7400 50  0001 C CNN
+	1    5550 7400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 7400 5550 7350
+Wire Notes Line
+	5300 7100 5300 7800
+$Comp
+L power:VCC #PWR?
+U 1 1 61DE4356
+P 4600 1950
+F 0 "#PWR?" H 4600 1800 50  0001 C CNN
+F 1 "VCC" H 4615 2123 50  0000 C CNN
+F 2 "" H 4600 1950 50  0001 C CNN
+F 3 "" H 4600 1950 50  0001 C CNN
+	1    4600 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 1950 4600 2000
+Wire Wire Line
+	4600 2000 4350 2000
+Connection ~ 4350 2000
+Text Notes 4150 1700 0    50   ~ 0
+VCC used in most places
+Text Notes 1950 3000 0    50   ~ 0
+Select low ESR X5R or X7R caps\nSelect shielded inductor
+Wire Notes Line
+	1500 1450 5200 1450
+Wire Notes Line
+	5200 1450 5200 3150
+Wire Notes Line
+	5200 3150 1500 3150
+Wire Notes Line
+	1500 3150 1500 1450
+Text Notes 1600 1550 0    50   ~ 0
++5V Supply
+$Comp
+L power:GNDPWR #PWR?
+U 1 1 61D70645
+P 7750 2450
+F 0 "#PWR?" H 7750 2250 50  0001 C CNN
+F 1 "GNDPWR" H 7754 2296 50  0000 C CNN
+F 2 "" H 7750 2400 50  0001 C CNN
+F 3 "" H 7750 2400 50  0001 C CNN
+	1    7750 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7750 2450 7750 2350
+$Comp
+L power:GND #PWR?
+U 1 1 61D7065A
+P 8050 2450
+F 0 "#PWR?" H 8050 2200 50  0001 C CNN
+F 1 "GND" H 8055 2277 50  0000 C CNN
+F 2 "" H 8050 2450 50  0001 C CNN
+F 3 "" H 8050 2450 50  0001 C CNN
+	1    8050 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8050 2450 8050 2350
+Wire Wire Line
+	8050 2350 7750 2350
+Connection ~ 7750 2350
+Wire Wire Line
+	7750 2350 7750 2250
+$Comp
+L zara80-cpu-rescue:AOZ1282CI-Regulator_Switching U?
+U 1 1 61D70668
+P 7750 1950
+AR Path="/61D70668" Ref="U?"  Part="1" 
+AR Path="/61D88F91/61D70668" Ref="U?"  Part="1" 
+F 0 "U?" H 7750 2317 50  0000 C CNN
+F 1 "AOZ1282CI" H 7750 2226 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" H 8450 1700 50  0001 C CNN
+F 3 "http://aosmd.com/res/data_sheets/AOZ1282CI.pdf" H 7500 1700 50  0001 C CNN
+	1    7750 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61D70672
+P 9000 2100
+F 0 "R?" H 9070 2146 50  0000 L CNN
+F 1 "49k9" H 9070 2055 50  0000 L CNN
+F 2 "" V 8930 2100 50  0001 C CNN
+F 3 "~" H 9000 2100 50  0001 C CNN
+	1    9000 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61D7067C
+P 9000 2500
+F 0 "R?" H 9070 2546 50  0000 L CNN
+F 1 "4k87" H 9070 2455 50  0000 L CNN
+F 2 "" V 8930 2500 50  0001 C CNN
+F 3 "~" H 9000 2500 50  0001 C CNN
+	1    9000 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 61D70686
+P 7000 2000
+F 0 "C?" H 7250 1950 50  0000 R CNN
+F 1 "4.7u" H 7250 2050 50  0000 R CNN
+F 2 "" H 7038 1850 50  0001 C CNN
+F 3 "~" H 7000 2000 50  0001 C CNN
+	1    7000 2000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7000 1850 7250 1850
+Wire Wire Line
+	7000 1800 7000 1850
+Wire Wire Line
+	7000 2150 7000 2350
+Wire Wire Line
+	7000 2350 7750 2350
+$Comp
+L Device:C C?
+U 1 1 61D70694
+P 8450 1750
+F 0 "C?" V 8198 1750 50  0000 C CNN
+F 1 "10n" V 8289 1750 50  0000 C CNN
+F 2 "" H 8488 1600 50  0001 C CNN
+F 3 "~" H 8450 1750 50  0001 C CNN
+	1    8450 1750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8150 1850 8200 1850
+Wire Wire Line
+	8200 1850 8200 1750
+Wire Wire Line
+	8200 1750 8300 1750
+Wire Wire Line
+	8600 1750 8650 1750
+Wire Wire Line
+	8650 1750 8650 1900
+Wire Wire Line
+	8650 1900 8200 1900
+Wire Wire Line
+	8200 1900 8200 1950
+Wire Wire Line
+	8200 1950 8150 1950
+$Comp
+L Device:L L?
+U 1 1 61D706A6
+P 8550 1950
+F 0 "L?" V 8600 2150 50  0000 C CNN
+F 1 "22u" V 8600 2000 50  0000 C CNN
+F 2 "" H 8550 1950 50  0001 C CNN
+F 3 "~" H 8550 1950 50  0001 C CNN
+	1    8550 1950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8200 1950 8300 1950
+Connection ~ 8200 1950
+$Comp
+L Device:D_Schottky D?
+U 1 1 61D706B2
+P 8300 2200
+F 0 "D?" V 8254 2280 50  0000 L CNN
+F 1 "D_Schottky" V 8345 2280 50  0000 L CNN
+F 2 "" H 8300 2200 50  0001 C CNN
+F 3 "~" H 8300 2200 50  0001 C CNN
+	1    8300 2200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8300 2050 8300 1950
+Connection ~ 8300 1950
+Wire Wire Line
+	8300 1950 8400 1950
+Wire Wire Line
+	8700 1950 9000 1950
+Wire Wire Line
+	8900 2050 8900 2300
+Wire Wire Line
+	8900 2300 9000 2300
+Wire Wire Line
+	9000 2300 9000 2250
+Wire Wire Line
+	8150 2050 8300 2050
+Connection ~ 8300 2050
+Wire Wire Line
+	8300 2050 8900 2050
+Wire Wire Line
+	9000 2300 9000 2350
+Connection ~ 9000 2300
+Wire Wire Line
+	8050 2350 8300 2350
+Connection ~ 8050 2350
+Wire Wire Line
+	8300 2350 8650 2350
+Wire Wire Line
+	8650 2350 8650 2700
+Wire Wire Line
+	8650 2700 9000 2700
+Wire Wire Line
+	9000 2700 9000 2650
+Connection ~ 8300 2350
+$Comp
+L Device:C C?
+U 1 1 61D706CF
+P 9400 2250
+F 0 "C?" H 9515 2296 50  0000 L CNN
+F 1 "10u" H 9515 2205 50  0000 L CNN
+F 2 "" H 9438 2100 50  0001 C CNN
+F 3 "~" H 9400 2250 50  0001 C CNN
+	1    9400 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9400 2400 9400 2700
+Wire Wire Line
+	9400 2700 9000 2700
+Connection ~ 9000 2700
+Wire Wire Line
+	9000 1950 9400 1950
+Wire Wire Line
+	9400 1950 9400 2100
+Connection ~ 9000 1950
+Wire Wire Line
+	9400 1950 9550 1950
+Wire Wire Line
+	9550 1950 9550 1900
+Connection ~ 9400 1950
+$Comp
+L Device:R R?
+U 1 1 61D706EC
+P 7250 2000
+F 0 "R?" H 7100 2100 50  0000 L CNN
+F 1 "4k7" V 7250 1950 50  0000 L CNN
+F 2 "" V 7180 2000 50  0001 C CNN
+F 3 "~" H 7250 2000 50  0001 C CNN
+	1    7250 2000
+	1    0    0    -1  
+$EndComp
+Connection ~ 7250 1850
+Wire Wire Line
+	7250 1850 7350 1850
+Connection ~ 7000 1850
+Wire Wire Line
+	7250 2150 7250 2250
+Wire Wire Line
+	7250 2250 7350 2250
+Wire Wire Line
+	7350 2250 7350 2050
+Text Notes 7150 2950 0    50   ~ 0
+Select low ESR X5R or X7R caps\nSelect shielded inductor
+Wire Notes Line
+	6700 1400 10400 1400
+Wire Notes Line
+	10400 1400 10400 3100
+Wire Notes Line
+	10400 3100 6700 3100
+Wire Notes Line
+	6700 3100 6700 1400
+Text Notes 6800 1500 0    50   ~ 0
++9V Supply
+Text Notes 6700 1300 0    50   ~ 0
++/-9V optional\nOnly needed if RS-232 driver is included
+$Comp
+L power:+9V #PWR?
+U 1 1 61D8FC58
+P 9550 1900
+F 0 "#PWR?" H 9550 1750 50  0001 C CNN
+F 1 "+9V" H 9565 2073 50  0000 C CNN
+F 2 "" H 9550 1900 50  0001 C CNN
+F 3 "" H 9550 1900 50  0001 C CNN
+	1    9550 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L zara80-cpu-rescue:+16V-vw #PWR?
+U 1 1 61D91BF5
+P 7000 1800
+F 0 "#PWR?" H 7000 1650 50  0001 C CNN
+F 1 "+16V-vw" H 7015 1973 50  0000 C CNN
+F 2 "" H 7000 1800 50  0001 C CNN
+F 3 "" H 7000 1800 50  0001 C CNN
+	1    7000 1800
+	1    0    0    -1  
+$EndComp
+Connection ~ 7750 4350
+Wire Wire Line
+	7750 4350 7750 4250
+$Comp
+L zara80-cpu-rescue:AOZ1282CI-Regulator_Switching U?
+U 1 1 61DB4A61
+P 7750 3950
+AR Path="/61DB4A61" Ref="U?"  Part="1" 
+AR Path="/61D88F91/61DB4A61" Ref="U?"  Part="1" 
+F 0 "U?" H 7750 4317 50  0000 C CNN
+F 1 "AOZ1282CI" H 7750 4226 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" H 8450 3700 50  0001 C CNN
+F 3 "http://aosmd.com/res/data_sheets/AOZ1282CI.pdf" H 7500 3700 50  0001 C CNN
+	1    7750 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61DB4A6B
+P 9000 4100
+F 0 "R?" H 9070 4146 50  0000 L CNN
+F 1 "49k9" H 9070 4055 50  0000 L CNN
+F 2 "" V 8930 4100 50  0001 C CNN
+F 3 "~" H 9000 4100 50  0001 C CNN
+	1    9000 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61DB4A75
+P 9000 4500
+F 0 "R?" H 9070 4546 50  0000 L CNN
+F 1 "4k87" H 9070 4455 50  0000 L CNN
+F 2 "" V 8930 4500 50  0001 C CNN
+F 3 "~" H 9000 4500 50  0001 C CNN
+	1    9000 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 61DB4A7F
+P 7000 4000
+F 0 "C?" H 7250 3950 50  0000 R CNN
+F 1 "4.7u" H 7250 4050 50  0000 R CNN
+F 2 "" H 7038 3850 50  0001 C CNN
+F 3 "~" H 7000 4000 50  0001 C CNN
+	1    7000 4000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7000 3850 7100 3850
+Wire Wire Line
+	7000 4150 7000 4350
+Wire Wire Line
+	7000 4350 7250 4350
+$Comp
+L Device:C C?
+U 1 1 61DB4A8D
+P 8450 3750
+F 0 "C?" V 8198 3750 50  0000 C CNN
+F 1 "10n" V 8289 3750 50  0000 C CNN
+F 2 "" H 8488 3600 50  0001 C CNN
+F 3 "~" H 8450 3750 50  0001 C CNN
+	1    8450 3750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8150 3850 8200 3850
+Wire Wire Line
+	8200 3850 8200 3750
+Wire Wire Line
+	8200 3750 8300 3750
+Wire Wire Line
+	8600 3750 8650 3750
+Wire Wire Line
+	8650 3750 8650 3900
+Wire Wire Line
+	8650 3900 8200 3900
+Wire Wire Line
+	8200 3900 8200 3950
+Wire Wire Line
+	8200 3950 8150 3950
+$Comp
+L Device:L L?
+U 1 1 61DB4A9F
+P 8550 3950
+F 0 "L?" V 8600 4150 50  0000 C CNN
+F 1 "22u" V 8600 4000 50  0000 C CNN
+F 2 "" H 8550 3950 50  0001 C CNN
+F 3 "~" H 8550 3950 50  0001 C CNN
+	1    8550 3950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8200 3950 8300 3950
+Connection ~ 8200 3950
+$Comp
+L Device:D_Schottky D?
+U 1 1 61DB4AAB
+P 8300 4200
+F 0 "D?" V 8254 4280 50  0000 L CNN
+F 1 "D_Schottky" V 8345 4280 50  0000 L CNN
+F 2 "" H 8300 4200 50  0001 C CNN
+F 3 "~" H 8300 4200 50  0001 C CNN
+	1    8300 4200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8300 4050 8300 3950
+Connection ~ 8300 3950
+Wire Wire Line
+	8300 3950 8400 3950
+Wire Wire Line
+	8700 3950 9000 3950
+Wire Wire Line
+	8900 4050 8900 4300
+Wire Wire Line
+	8900 4300 9000 4300
+Wire Wire Line
+	9000 4300 9000 4250
+Wire Wire Line
+	8150 4050 8300 4050
+Connection ~ 8300 4050
+Wire Wire Line
+	8300 4050 8900 4050
+Wire Wire Line
+	9000 4300 9000 4350
+Connection ~ 9000 4300
+Wire Wire Line
+	8300 4350 8650 4350
+Wire Wire Line
+	8650 4350 8650 4700
+Wire Wire Line
+	8650 4700 9000 4700
+Wire Wire Line
+	9000 4700 9000 4650
+Connection ~ 8300 4350
+$Comp
+L Device:C C?
+U 1 1 61DB4AC8
+P 9400 4250
+F 0 "C?" H 9515 4296 50  0000 L CNN
+F 1 "10u" H 9515 4205 50  0000 L CNN
+F 2 "" H 9438 4100 50  0001 C CNN
+F 3 "~" H 9400 4250 50  0001 C CNN
+	1    9400 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9400 4400 9400 4700
+Wire Wire Line
+	9400 4700 9000 4700
+Connection ~ 9000 4700
+Wire Wire Line
+	9000 3950 9400 3950
+Wire Wire Line
+	9400 3950 9400 4100
+Connection ~ 9000 3950
+Wire Wire Line
+	9400 3950 9800 3950
+Connection ~ 9400 3950
+$Comp
+L Device:R R?
+U 1 1 61DB4ADB
+P 7250 4000
+F 0 "R?" H 7100 4100 50  0000 L CNN
+F 1 "4k7" V 7250 3950 50  0000 L CNN
+F 2 "" V 7180 4000 50  0001 C CNN
+F 3 "~" H 7250 4000 50  0001 C CNN
+	1    7250 4000
+	1    0    0    -1  
+$EndComp
+Connection ~ 7250 3850
+Wire Wire Line
+	7250 3850 7350 3850
+Wire Wire Line
+	7250 4150 7250 4250
+Wire Wire Line
+	7250 4250 7350 4250
+Wire Wire Line
+	7350 4250 7350 4050
+Text Notes 7150 4950 0    50   ~ 0
+Select low ESR X5R or X7R caps\nSelect shielded inductor
+Wire Notes Line
+	6700 3400 10400 3400
+Wire Notes Line
+	10400 3400 10400 5100
+Wire Notes Line
+	10400 5100 6700 5100
+Wire Notes Line
+	6700 5100 6700 3400
+Text Notes 6800 3500 0    50   ~ 0
+-9V Supply
+$Comp
+L zara80-cpu-rescue:-16V-vw #PWR?
+U 1 1 61DC13F8
+P 6900 4600
+F 0 "#PWR?" H 6900 4450 50  0001 C CNN
+F 1 "-16V-vw" H 6915 4773 50  0000 C CNN
+F 2 "" H 6900 4600 50  0001 C CNN
+F 3 "" H 6900 4600 50  0001 C CNN
+	1    6900 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:-9V #PWR?
+U 1 1 61DC1BE7
+P 9800 4600
+F 0 "#PWR?" H 9800 4475 50  0001 C CNN
+F 1 "-9V" H 9815 4773 50  0000 C CNN
+F 2 "" H 9800 4600 50  0001 C CNN
+F 3 "" H 9800 4600 50  0001 C CNN
+	1    9800 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61DC206F
+P 9800 3950
+F 0 "#PWR?" H 9800 3700 50  0001 C CNN
+F 1 "GND" H 9805 3777 50  0000 C CNN
+F 2 "" H 9800 3950 50  0001 C CNN
+F 3 "" H 9800 3950 50  0001 C CNN
+	1    9800 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9400 4700 9800 4700
+Wire Wire Line
+	9800 4700 9800 4600
+Connection ~ 9400 4700
+Wire Wire Line
+	7750 4350 8300 4350
+Wire Wire Line
+	6900 4600 6900 4650
+Wire Wire Line
+	6900 4650 7250 4650
+Wire Wire Line
+	7250 4650 7250 4350
+Connection ~ 7250 4350
+Wire Wire Line
+	7250 4350 7750 4350
+$Comp
+L power:GNDPWR #PWR?
+U 1 1 61DCEEDE
+P 6900 3600
+F 0 "#PWR?" H 6900 3400 50  0001 C CNN
+F 1 "GNDPWR" H 6904 3446 50  0000 C CNN
+F 2 "" H 6900 3550 50  0001 C CNN
+F 3 "" H 6900 3550 50  0001 C CNN
+	1    6900 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6900 3600 6900 3550
+Wire Wire Line
+	6900 3550 7100 3550
+Wire Wire Line
+	7100 3550 7100 3850
+Connection ~ 7100 3850
+Wire Wire Line
+	7100 3850 7250 3850
+Wire Notes Line
+	5300 7800 6000 7800
+Wire Notes Line
+	5300 7100 6000 7100
+Text Notes 5350 7050 0    50   ~ 0
+Make DRC happy
+Text Notes 2100 850  0    50   ~ 0
++8V, +16V, -16V, GNDPWR unregulated from the bus\n+5V/Vcc, +9V, -9V are regulated
+$Comp
+L power:+8V #PWR?
+U 1 1 61DFC0BF
+P 2000 5050
+F 0 "#PWR?" H 2000 4900 50  0001 C CNN
+F 1 "+8V" H 2015 5223 50  0000 C CNN
+F 2 "" H 2000 5050 50  0001 C CNN
+F 3 "" H 2000 5050 50  0001 C CNN
+	1    2000 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L zara80-cpu-rescue:+16V-vw #PWR?
+U 1 1 61DFC6E9
+P 2450 5050
+F 0 "#PWR?" H 2450 4900 50  0001 C CNN
+F 1 "+16V-vw" H 2465 5223 50  0000 C CNN
+F 2 "" H 2450 5050 50  0001 C CNN
+F 3 "" H 2450 5050 50  0001 C CNN
+	1    2450 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L zara80-cpu-rescue:-16V-vw #PWR?
+U 1 1 61DFD2BF
+P 2950 5050
+F 0 "#PWR?" H 2950 4900 50  0001 C CNN
+F 1 "-16V-vw" H 2965 5223 50  0000 C CNN
+F 2 "" H 2950 5050 50  0001 C CNN
+F 3 "" H 2950 5050 50  0001 C CNN
+	1    2950 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDPWR #PWR?
+U 1 1 61DFDEE8
+P 2450 5700
+F 0 "#PWR?" H 2450 5500 50  0001 C CNN
+F 1 "GNDPWR" H 2454 5546 50  0000 C CNN
+F 2 "" H 2450 5650 50  0001 C CNN
+F 3 "" H 2450 5650 50  0001 C CNN
+	1    2450 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 61DFEE1D
+P 2000 5300
+F 0 "C?" H 2118 5346 50  0000 L CNN
+F 1 "10u" H 2118 5255 50  0000 L CNN
+F 2 "" H 2038 5150 50  0001 C CNN
+F 3 "~" H 2000 5300 50  0001 C CNN
+	1    2000 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 61DFF736
+P 2450 5300
+F 0 "C?" H 2568 5346 50  0000 L CNN
+F 1 "10u" H 2568 5255 50  0000 L CNN
+F 2 "" H 2488 5150 50  0001 C CNN
+F 3 "~" H 2450 5300 50  0001 C CNN
+	1    2450 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 61DFFB0A
+P 2950 5300
+F 0 "C?" H 2832 5254 50  0000 R CNN
+F 1 "10u" H 2832 5345 50  0000 R CNN
+F 2 "" H 2988 5150 50  0001 C CNN
+F 3 "~" H 2950 5300 50  0001 C CNN
+	1    2950 5300
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2450 5700 2450 5600
+Wire Wire Line
+	2000 5450 2000 5500
+Wire Wire Line
+	2000 5500 2450 5500
+Connection ~ 2450 5500
+Wire Wire Line
+	2450 5500 2450 5450
+Wire Wire Line
+	2450 5600 2950 5600
+Wire Wire Line
+	2950 5600 2950 5450
+Connection ~ 2450 5600
+Wire Wire Line
+	2450 5600 2450 5500
+Wire Wire Line
+	2000 5050 2000 5150
+Wire Wire Line
+	2450 5050 2450 5150
+Wire Wire Line
+	2950 5050 2950 5150
+Text Notes 1850 4800 0    50   ~ 0
+Board level bypass, place near bus inputs
+Wire Notes Line
+	1800 4700 3600 4700
+Wire Notes Line
+	3600 4700 3600 5950
+Wire Notes Line
+	3600 5950 1800 5950
+Wire Notes Line
+	1800 5950 1800 4700
+$EndSCHEMATC

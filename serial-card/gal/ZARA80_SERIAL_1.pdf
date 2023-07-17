@@ -1,0 +1,129 @@
+{COMPONENT C:\USERS\RETREV\GOOGLE DRIVE\ZARA80\SERIAL-CARD\GAL\ZARA80_SERIAL_1.SYM
+
+ {ENVIRONMENT
+  {PDIFvrev 3.00}
+  {Program "CUPL(WM) Version 5.0a"}
+  {DBtype "Schematic"}
+  {DBvrev 1.01}
+  {DBtime "Mon Jun 05 09:28:47 2023 "}
+  {DBunit "MIL"}
+  {DBgrid 10}
+  {Lyrstr "WIRES" 1 "BUS" 1 "GATE" 2 "IEEE" 2 "PINFUN" 3 "PINNUM" 1 
+          "PINNAM" 6 "PINCON" 4 "REFDES" 2 "ATTR" 6 "SDOT" 1 
+          "DEVICE" 5 "OUTLIN" 5 "ATTR2" 6 "NOTES" 6 "NETNAM" 4 
+          "CMPNAM" 5 "BORDER" 5}
+ }
+
+ {USER
+  {VIEW
+   {Mode SYMB}
+   {Nlst OPEN}
+   {Vw 0 0 2}
+   {Lv 12 2 2 2 0 0 2 2 2 2 0 0 2 1 2 0 0 0 0}
+   {Gs 10 10}
+  }
+ }
+
+ {DISPLAY
+  [Ly "PINNUM"]
+  [Ls "SOLID"][Wd 0]
+  [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+ }
+
+ {SYMBOL
+  {PIN_DEF
+   [Ly "PINCON"]
+   {P ADRSTB' {Pt "INPUT"}{Lq 0}{Ploc 100 120}}
+   {P DATSTB' {Pt "INPUT"}{Lq 0}{Ploc 100 100}}
+   {P CM2 {Pt "INPUT"}{Lq 0}{Ploc 100 80}}
+   {P CM1 {Pt "INPUT"}{Lq 0}{Ploc 100 60}}
+   {P CM0 {Pt "INPUT"}{Lq 0}{Ploc 100 40}}
+   {P PORTSEL {Pt "INPUT"}{Lq 0}{Ploc 100 20}}
+   {P OE {Pt "I/O"}{Lq 0}{Ploc 290 20}}
+  }
+
+  {PKG
+   [Ly "REFDES"]
+   [Ts 25][Tj "CB"][Tr 0][Tm "N"]
+   {Rdl 195 150}
+
+   [Ly "PINNUM"]
+   [Ts 15][Tj "RC"]
+   {Pnl 120 130}
+   {Pnl 120 110}
+   {Pnl 120 90}
+   {Pnl 120 70}
+   {Pnl 120 50}
+   {Pnl 120 30}
+   [Ts 15][Tj "LC"]
+   {Pnl 270 30}
+
+   {Sd A 1 2 3 4 5 6 19}
+  }
+
+  {PIC
+   [Ly "GATE"]
+   [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+   {R 130 140 260 0}
+   {L 120 120 100 120}
+   {C 125 120 5}
+   {L 120 100 100 100}
+   {C 125 100 5}
+   {L 130 80 100 80}
+   {L 130 60 100 60}
+   {L 130 40 100 40}
+   {L 130 20 100 20}
+   {L 260 20 290 20}
+   [Ly "PINNAM"]
+   [Tj "LC"]
+   {T "ADRSTB'" 140 120}
+   {T "DATSTB'" 140 100}
+   {T "CM2" 140 80}
+   {T "CM1" 140 60}
+   {T "CM0" 140 40}
+   {T "PORTSEL" 140 20}
+   [Tj "RC"]
+   {T "OE" 250 20}
+   [Ly "DEVICE"]
+   [Tj "CT"]
+   {T "G16V8AS" 195 -10}
+  }
+
+  {ATR
+   {IN
+    {Org 100 20}
+    {Ty 255}
+   }
+   {EX
+    [Ly "ATTR2"]
+    [Ts 12][Tj "CT"][Tr 0][Tm "N"]
+    {At PLD C:\USERS\RETREV\GOOGLE DRIVE\ZARA80\SERIAL-CARD\GAL\ZARA80_SERIAL_1 195 140}
+   }
+  }
+ }
+
+ {DETAIL
+  {ANNOTATE
+  }
+
+  {NET_DEF
+   {N ADRSTB'
+   }
+   {N DATSTB'
+   }
+   {N CM2
+   }
+   {N CM1
+   }
+   {N CM0
+   }
+   {N PORTSEL
+   }
+   {N OE
+   }
+  }
+
+  {SUBCOMP
+  }
+ }
+}
